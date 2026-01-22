@@ -1,0 +1,56 @@
+/*I used this website to figure out how to import the fonts to the css file
+https://www.w3docs.com/snippets/css/how-to-import-google-fonts-in-css-file.html
+*/
+@import url('https://fonts.googleapis.com/css2?family=Nosifer&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nosifer&family=Special+Elite&display=swap");
+
+.nosifer-regular {
+  font-family: "Nosifer", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.special-elite-regular {
+  font-family: "Special Elite", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.body {
+  margin:0;
+  background-image: url(./images/background.jpg);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.nav {
+    background-color: #2e2d2d;
+    color: white;
+    height: 6rem;
+    font-family: "Nosifer", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 3.5rem;
+}
+
+.nav__layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__image {
+    width: 4rem;
+    height: 5rem;
+    vertical-align: bottom;
+}
+
+.container {
+    box-sizing: border-box;
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin: 0 auto;
+}
