@@ -39,6 +39,7 @@ https://www.w3docs.com/snippets/css/how-to-import-google-fonts-in-css-file.html
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 0 7rem;
 }
 
 .nav__image {
@@ -53,4 +54,66 @@ https://www.w3docs.com/snippets/css/how-to-import-google-fonts-in-css-file.html
     padding-left: 1rem;
     padding-right: 1rem;
     margin: 0 auto;
+}
+
+.heading {
+    font-family: "Special Elite", system-ui;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1.75rem;
+    color: #2e2d2d;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.title {
+    font-family: "Nosifer", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2.5rem;
+    color: #2e2d2d;
+    text-align: center;
+    margin: 0;
+}
+
+.movies {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 7rem;
+}
+
+.movie__image {
+    display: block;
+    width: 11rem;
+    height: 15rem;
+    box-shadow: 0rem 0.25rem 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+.movie__review {
+    font-family: "Special Elite", system-ui;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1.25rem;
+    color: #2e2d2d;
+    text-align: center;
+    width: 11rem;
+    margin-top: 0.5rem;
+}
+
+.movie__stars {
+    font-size: 2rem;
+    color: #5c0d0d;
+    margin: 0;
+    text-align: center;
+}
+
+.small_note {
+    font-family: "Special Elite", system-ui;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1rem;
+    color: #2e2d2d;
+    text-align: center;
+    margin-top: 0;
 }
