@@ -16,15 +16,18 @@ https://www.w3docs.com/snippets/css/how-to-import-google-fonts-in-css-file.html
   font-style: normal;
 }
 
+/*Set up the background image for the page*/
 .body {
   margin:0;
   background-image: url(./images/background.jpg);
 }
 
+/*Use the border-box as the constraint for stuff on the page.*/
 * {
     box-sizing: border-box;
 }
 
+/*Color the top nav bar and set the proper font*/
 .nav {
     background-color: #2e2d2d;
     color: white;
@@ -35,6 +38,7 @@ https://www.w3docs.com/snippets/css/how-to-import-google-fonts-in-css-file.html
     font-size: 3.5rem;
 }
 
+/*Set up how the nav bar should be displayed*/
 .nav__layout {
     display: flex;
     justify-content: space-between;
@@ -42,12 +46,14 @@ https://www.w3docs.com/snippets/css/how-to-import-google-fonts-in-css-file.html
     margin: 0 7rem;
 }
 
+/*The specific size settings for the ghostface images in the nav bar*/
 .nav__image {
     width: 4rem;
     height: 5rem;
     vertical-align: bottom;
 }
 
+/*A general container*/
 .container {
     box-sizing: border-box;
     width: 100%;
@@ -56,6 +62,7 @@ https://www.w3docs.com/snippets/css/how-to-import-google-fonts-in-css-file.html
     margin: 0 auto;
 }
 
+/*Font settings for the headings on the page*/
 .heading {
     font-family: "Special Elite", system-ui;
     font-weight: 700;
@@ -66,6 +73,7 @@ https://www.w3docs.com/snippets/css/how-to-import-google-fonts-in-css-file.html
     margin-bottom: 0.5rem;
 }
 
+/*Font settings for the title of the page*/
 .title {
     font-family: "Nosifer", sans-serif;
     font-weight: 400;
@@ -76,6 +84,7 @@ https://www.w3docs.com/snippets/css/how-to-import-google-fonts-in-css-file.html
     margin: 0;
 }
 
+/*Display settings for the movies for spacing*/
 .movies {
     display: flex;
     justify-content: space-between;
@@ -83,6 +92,7 @@ https://www.w3docs.com/snippets/css/how-to-import-google-fonts-in-css-file.html
     margin: 0 7rem;
 }
 
+/*Size settings for the movie poster images and an added box shadow*/
 .movie__image {
     display: block;
     width: 11rem;
@@ -90,6 +100,15 @@ https://www.w3docs.com/snippets/css/how-to-import-google-fonts-in-css-file.html
     box-shadow: 0rem 0.25rem 0.5rem rgba(0, 0, 0, 0.5);
 }
 
+/*Color and size settings for the stars*/
+.movie__stars {
+    font-size: 2rem;
+    color: #5c0d0d;
+    margin: 0;
+    text-align: center;
+}
+
+/*Font settings and display settings for the movie reviews*/
 .movie__review {
     font-family: "Special Elite", system-ui;
     font-weight: 700;
@@ -101,13 +120,7 @@ https://www.w3docs.com/snippets/css/how-to-import-google-fonts-in-css-file.html
     margin-top: 0.5rem;
 }
 
-.movie__stars {
-    font-size: 2rem;
-    color: #5c0d0d;
-    margin: 0;
-    text-align: center;
-}
-
+/*Font and display settings for the small note on requels*/
 .small_note {
     font-family: "Special Elite", system-ui;
     font-weight: 700;
