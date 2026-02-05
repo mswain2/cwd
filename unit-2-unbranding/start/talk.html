@@ -3,7 +3,8 @@
 	<head>
 		<!--
 		About this page:
-
+			I wanted my conversation to look like a text message (in dark mode on Apple) so I did my best to mimic that appearance.
+			As for the topic, I wanted it to seem like it was a conversation being had with another person when really it represents more of an inner dialog. I personally have issues with putting too much pressure on myself and I've been working on being more positive with supporting myself. I wanted to show that while it is an inner dialog, the struggle to positively support yourself can feel like a back-and-forth with someone else.
 		-->
 
 		<meta charset="UTF-8">
@@ -22,20 +23,38 @@
 				padding: 15px;
 				width: 300px;
 				box-shadow: 3px 3px 10px black;
+				display: block;
 			}
 
 			.char1 {
 				color: white;
 				text-align: right;
 				background-color: skyblue;
-				margin-left: 800px;
+				margin-left: 670px;
 			}
 
 			.char2 {
 				color: white;
 				text-align: left;
 				background-color: darkgray;
-				margin-left: 100px;
+			}
+
+			.screen {
+				display: block;
+				background-color: darkslategray;
+				padding: 15px;
+				border-radius: 15px;
+				margin: auto;
+				width: 1000px;
+				outline: 2px solid black;
+			}
+
+			.message{
+				color: slategray;
+				text-align: left;
+				background-color: lightslategray;
+				width: 970px;
+				margin-top: 30px;
 			}
 
 
@@ -46,7 +65,7 @@
 	<body>
 		<h1>A Conversation</h1>
 
-		<div>
+		<div class="screen">
 
 			<p class="char1">Hey. We need to talk.</p>
 
@@ -64,6 +83,8 @@
 			<p class="char1">I'm not asking for the same treatment you give everyone else. I just need you to support <b>me</b> and give <b>me</b> some grace. I do well with the pressure, but I need support too so I don't crumble.</p>
 
 			<p class="char2">ok... i guess i can try</p>
+
+			<p class="message">iMessage</p>
 
 		</div>
 
