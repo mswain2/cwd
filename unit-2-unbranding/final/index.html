@@ -1,15 +1,1281 @@
 <!doctype html>
-<html>
-<head>
+<html lang="en">
+	<head>
 
-	<!--
-	About this page:
+		<!--
+		Goals for this page (Before coding):
+			I chose LinkedIn as the website I wanted to unbrand. Since I am graduating soon, I have been spending a lot of time on LinkedIn and noticed some issues as well as controversy in the news. The controversy I most wanted to address was the gender bias. This is a list of things I am planning on doing:
+			1. "in" -> "inequity" This is a comment on how women often face inequity when it comes to job applications and recommendations. Women tend to get more "traditional" role recommendations like HR.
+			2. "Messaging" -> "Unsolicited Advice" This is a comment on how women are more likely than men to receive unsolicited advice about their experience or approach.
+			3. "Open to work" -> "Open to being taken seriously" It can be really hard for women to be taken seriously in a professional setting when they finally find a fitting job.
+			4. "Top Voice" -> "Top Interrupted Voice" Women are often interrupted during meetings when they are attempting to have their ideas heard.
+			5. Targeted ads. Women are more likely to be targeted with ads addressing their soft skills. The included ads targeting soft skills will change to reflect the more sexist advice women tend to receive in a professional setting.
+			6. Top Skills. Women tend to be favored more for soft skills and their technical skills tend not to be taken seriously. Any soft skills are rephrased to a sexist tone and technical skills are rewritten.
+			7. Activity. Posts on linkedIn tend to be very positive and I wanted to flip that. The original posts are very positive comments. The unbranded posts maintain a positive tone, but shift to realistic comments about struggles women face in professional settings.
+		-->
 
-	-->
-	<title>Unbranding</title>
-	
-</head>
-<body>
-	<h1>Hello, world!</h1>
-</body>
+
+		<!--Reflection at end
+			I had a really good time with this project. It was definitely a lot of work and I understand why Whalen said I was taking on a lot with this idea. But I think it turned out really good! I did make some changes, like switching the panda image back to a text comment, but I think it looks a lot like I envisioned it looking. I like how I was able to unbrand LinkedIn to reveal gender bias both on the website and just in general for women in the workplace.
+			As a reminder, here are the switches:
+				in -> inequity
+				Messaging -> Unsolicited Advice
+				OpenToWork -> OpenToBeingTakenSeriously
+				Top Voice -> Top Interrupted Voice
+				Top skills -> commentary on each listed skill
+				Posts -> a positive, but more realistic comment reflecting on problems women face in a workplace
+				Ads -> commentary on how women are viewed and how they are expected to behave in a work setting
+			I'm really happy with how this turned out and I think I learned a lot, especially with the JavaScript. There was a lot of problem solving and learning throughout this project, as seen in the tutorials I included, but it was a lot of fun! It definitely surprised me that a lot of my time and problem solving was spent in CSS, but it worked out to be a good result.
+		-->
+
+		<meta charset="utf-8">
+		<title> LinkedIn </title>
+
+		<style>
+
+			* {
+				box-sizing: border-box;
+			}
+
+			body {
+				/*Set page background color to offwhite cream color to match LinkedIn*/
+				background-color: #F4F2EE;
+				/*Set margin to zero to get rid of gaps on edges*/
+				margin: 0;
+			}
+			nav {
+				/*Set navbar color to white*/
+				background-color: white;
+				/*Set height to 6rem. This might be too big, but we'll see*/
+				/*I changed it to 5 after adding all of the nav bar elements because 6 was in fact too big */
+				height: 5rem;
+				
+			}
+
+			.inLogo {
+				/*Set this display to block. It allows all the following setting to work the way they did before having the outer flex display div*/
+				display: block;
+				/*Set color to LinkedIn Blue*/
+				background-color: #0A66C2;
+				/*Set width and height to roughly match font-size. Want the box to be close around the text*/
+				width: 3.5rem;
+				height: 3.5rem;
+				/*Center align the text inside the blue box*/
+				text-align: center;
+				/*Curve the edges of the box to match the original logo*/
+				border-radius: 7px;
+				/*Set padding to zero. I had to do the arranging within a div surrounding this that used padding.*/
+				padding: 0;
+				/*Scoot the logo to the right a little to push it farther from the edge. I think it was too close before and the extra space makes it look nicer.*/
+				margin-left: 30px;
+			}
+
+			.in {
+				/*Set text color to white*/
+				color: white;
+				/*Set font to Roboto Bold to match the LinkedIn font*/
+				font-family: Roboto;
+				font-weight: bold;
+				/*Set font-size to 3 to make a big logo*/
+				font-size: 3rem;
+				/*Set margins to zero to get rid of large p margins.*/
+				margin: 0;
+			}
+
+			/*I created this to do the equity part of the javascript for inequity.*/
+			.hidden_inequity {
+				/*Set text color to white so it is hidden*/
+				color: pink;
+				/*Set everything to match the rest of the logo*/
+				font-family: Roboto;
+				font-weight: bold;
+				font-size: 3rem;
+				margin: 0;
+				/*I had to add extra positioning*/
+				position: absolute;
+				top: 13px;
+				left: 100px;
+			}
+
+			div {
+				/*Set padding to 0.75 to arrange the logo in the navbar*/
+				padding: 0.75rem;
+				/*Set display to flex to lay out elements horizontally*/
+				display: flex;
+				/*As I added elements, this did not do what I wanted it to. I thought I would have to change this, but I added another class. This separates the logo and the four menu options*/
+				justify-content: space-between;
+				/*Align items in the center vertically*/
+    			align-items: center;
+			}
+
+			.nav_image, .nav_avatar{
+				/*Set width and height to 3 rem to fit in the navbar*/
+				width: 2rem;
+				height: 2rem;
+				/*Set margin to 0 to get rid of space*/
+				margin: 0;
+			}
+
+			.nav_image {
+				/*The pngs I found for the navbar images were all black and I wanted them to match the same color as the text. I used this source: https://www.geeksforgeeks.org/css/how-to-change-color-of-png-image-using-css/ to learn about how to change the color of a png and tweaked to get the right color*/
+				filter: invert(40%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(90%) contrast(90%);
+			}
+
+			/*Added the nav_textM to distinguish the message from the other options*/
+			.nav_text, .nav_textM {
+				/*Set font to Roboto to match LinkedIn*/
+				font-family: Roboto;
+				/*Set font color to light gray to match LinkedIn*/
+				color: #666666;
+				/*Set margin to zero to remove space between image and text*/
+				margin: 0;
+			}
+
+
+			/*Added the nav_optionM to distinguish the message from the other options for javascript purposes*/
+			.nav_option, .nav_optionM{
+				/*Set display to block so the image will sit above the text*/
+				display: block;
+				/*Center the text to center it with the image*/
+				text-align: center;
+				/*Set padding to zero. I had to do the arranging within a div surrounding this that used padding.*/
+				padding: 0rem;
+			}
+
+			.options {
+				/*Set display to flex.*/
+				display: flex;
+				/*This gap allows for separation between the four nav_option divs. Adding this class allowed for the setup as it is now. I used this source to learn about gap and other nav spacing https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Flexible_box_layout/Aligning_items*/
+				gap: 50px;
+				/*Remove padding added from outer div*/
+				padding: 0;
+				/*Add a right margin to scoot everything further away from the edge. I think it looks nicer with a little more space.*/
+				margin-right: 30px;
+			}
+
+			
+			.box1, .box2, .box3, .lang, .ads {
+				/*Set width to 70% for the larger boxes. This may need to shrink after I've added the ads in the right column.*/
+				/*I changed width to a set number to make it easier to do the banner image.*/
+				width: 800px;
+				/*Set the background color to white to contrast the offwhite background and to match the LinkedIn website.*/
+				background-color: white;
+				/*Set vertical margin to 30 to provide vertical spacing from the navbar and the following boxes. May need to separate into top and bottom if the bottom space is too large. I set the horizontal margins to 40 to match up the left of the box with the LinkedIn logo. This also may need to split if the right margin is too big.*/
+				/*After adding the second box, I think the gap between boxes it too large, so I'm decreasing to 20*/
+				margin: 20px 40px;
+				/*Round the corners of the box to match LinkedIn*/
+				border-radius: 10px;
+				/*Set padding to zero so the banner image stretches the entire width.*/
+				padding: 0;
+				/*Set the position to relative to have the banner image at the top of the box.*/
+				position: relative;
+			}
+
+			.box1 {
+				/*Set height to start. May change.*/
+				/*height: 500px;*/
+				/*Had to increase the height to include the profile buttons*/
+				height: 525px;
+			}
+
+			.box2 {
+				/*Set height to 500 to start. May change.*/
+				/*500 was too large for the About box. I shrunk it down to 290*/
+				height: 290px;
+			}	
+
+			.box3 {
+				/*Set height to 500 to start. May change.*/
+				/*This height ended up being perfect.*/
+				height: 500px;
+			}
+
+			.lang {
+				/*Set width to 350 to fit in the right side area*/
+				width: 350px;
+				/*Set height to 500 to start. May change.*/
+				/*500 was way too big. 250 worked better*/
+				height: 250px;
+				/*Position it to sit at the top and on the right*/
+				position: absolute;
+				right: 0px;
+				top: 80px;
+			}
+
+			.ads{
+				/*Set width to 350 to fit in the right side area*/
+				width: 350px;
+				/*Set height to 500 to start. May change.*/
+				/*500 was too big. 400 worked best.*/
+				height: 400px;
+				/*Position it to sit below the lang box and on the right*/
+				position: absolute;
+				right: 0px;
+				top: 350px;
+			}
+
+			/*The image for the banner*/
+			.banner {
+				/*Set width and height to 100%*/
+				height: 100%;
+				width: 100%;
+				/*This is used to make the image fill the container without being distorted or weird. I used this source: https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Solve_CSS_problems/Fill_a_box_with_an_image*/
+				object-fit: cover;
+			}
+
+			/*The container for the banner image*/
+			.banner_box {
+				/*Inherit the width from the outside box.*/
+				width: inherit;
+				/*Set the height to 200 to be a slim banner at the top of the primary box.*/
+				height: 200px;
+				/*Hide any overflow from the image.*/
+				overflow: hidden;
+				/*Set padding to zero so the image lines up with the outside of the main box.*/
+				padding: 0;
+				/*Align the banner image to the top of the outer box*/
+				position: absolute;
+				top: 0;
+				/*Round the top two corners to match the outer box*/
+				border-radius: 10px 10px 0px 0px;
+				/*Add a shadow below */
+				box-shadow: 0rem 0.25rem 0.5rem rgba(0, 0, 0, 0.20);
+				/*Have the banner be in the back*/
+				z-index: 1;
+			}
+
+			.avatar {
+				/*Set width and height to have a larger avatar*/
+				width: 125px;
+				height: 125px;
+				/*Create a drop shadow to separate the avatar more cleanly from the banner image*/
+				filter: drop-shadow(0px -3px 0px rgba(255, 255, 255, 1));
+				/*Set position to absolute and z-index to move the avatar in front of the banner*/
+				position: absolute;
+				z-index: 2;
+			}
+
+			.badge_text{
+				/*Set background color of the badge to green*/
+				background-color: rgb(42, 128, 0, 0.5);
+				/*Set font family to roboto for the boxy LinkedIn look*/
+				font-family: Roboto;
+				/*Set text color to white to match LinkedIn*/
+				color: white;
+				/*Set width to 200 to create a cushion around the text*/
+				width: 200px;
+				/*Center the text within the box to have cushioning on both sides*/
+				text-align: center;
+				/*Move to the front so it displays in front of the picture*/
+				position: absolute;
+				z-index: 3;
+				/*Set it so it is all the way to the left of the box*/
+				left: 0px;
+				/*Change the font size to be small enough*/
+				font-size: 20px;
+				/*Set it so that it aligns vertically over the avatar*/
+				top: 250px;
+			}
+
+			.edit_img {
+				/*Set to 40 by 40 to be smaller*/
+				width: 30px;
+				height: 30px;
+				/*Move it so it is in the top right of the box below the banner*/
+				position: absolute;
+				right: 20px;
+			}
+
+			.school {
+				/*Position the school name and logo on the right side below the banner*/
+				position: absolute;
+				top: 260px;
+				right: 20px;
+			}
+
+			.school_logo {
+				/*Set the logo to 60 by 60 so it is larger than the edit icon*/
+				width: 60px;
+				height: 60px;
+				/*Add some padding to separate the logo more from the name*/
+				padding: 10px;
+
+			}
+
+			.school_text {
+				/*Set font size to be appropriate for the page*/
+				font-size: 15px;
+				/*Set font family and weight to match LinkedIn*/
+				font-family: Roboto;
+				font-weight: bold;
+			}
+
+			.verify {
+				/*Make the verify icon 40 by 40 so it is roughly the same size as the text*/
+				width: 40px;
+				height: 40px;
+			}
+
+			.name {
+				/*Set font-size to larger so the name is noticable*/
+				font-size: 30px;
+				/*Set font family and weight to match LinkedIn*/
+				font-family: Roboto;
+				font-weight: bold;
+				/*Add padding to have space between the name and the verified icon*/
+				padding: 5px;
+				margin: 0;
+			}
+
+			.name_container {
+				/*Position the name and verified icon below the avatar*/
+				position: absolute;
+				top: 305px;
+			}
+
+			/*I needed to create a small circle for the primary box between the location and contact. I used this tutorial to figure it out: https://www.w3schools.com/howto/howto_css_circles.asp*/
+			.dot, .profile_dot{
+				/*Set height and width to roughly match the font size*/
+				height: 10px;
+				width: 10px;
+				/*Set the color to match the gray of the nav bar*/
+				background-color: #666666;
+				/*Set border radius to 50% to make a circle*/
+				border-radius: 50%;
+				/*Set display to inline block to fit in the text*/
+				display: inline-block;
+				/*Create some extra space for the left and right to separate it more from the words*/
+				padding: 5px 0px;
+			}
+
+			/*For some reason, the profile dot needed extra positioning. I wanted to reuse the dots again in the about section and it worked fine in that section, but needed this extra positioning for the profile.*/
+			.profile_dot {
+				position: absolute;
+				top: 391px;
+				left: 125px;
+			}
+
+			.location, .contact, .connections, .descp {
+				font-family: Roboto;
+				font-size: 15px;
+				position: absolute;
+			}
+
+			.contact, .connections {
+				color: #0A66C2;
+				font-weight: bold;
+			}
+
+			.contact {
+				top: 375px;
+				left: 130px;
+			}
+
+			.location {
+				color: #666666;
+				top: 375px;
+			}
+
+			.descp {
+				top: 350px;
+			}
+
+			.connections {
+				top: 400px;
+			}
+
+			.smallInLogo {
+				/*Set this display to block. It allows all the following setting to work the way they did before having the outer flex display div*/
+				display: block;
+				/*Set color to LinkedIn Blue*/
+				background-color: #0A66C2;
+				/*Set width and height to roughly match font-size. Want the box to be close around the text*/
+				width: 1.25rem;
+				height: 1.25rem;
+				/*Center align the text inside the blue box*/
+				text-align: center;
+				/*Curve the edges of the box to match the original logo*/
+				border-radius: 3px;
+				/*Set padding to zero. I had to do the arranging within a div surrounding this that used padding.*/
+				padding: 0;
+			}
+
+			.smallIn {
+				/*Set text color to the same blue as the background*/
+				color: #accaed;
+				/*Set font to Roboto Bold to match the LinkedIn font*/
+				font-family: Roboto;
+				font-weight: bold;
+				/*Set font-size to 1 to make a smaller logo*/
+				font-size: 1rem;
+				/*Set margins to zero to get rid of large p margins.*/
+				margin: 0;
+			}
+
+			.award {
+				/*Set background to light blue to match LinkedIn*/
+				background-color: #accaed;
+				/*Curve the border*/
+				border-radius: 50px;
+				/*Constrain the height a little. It was too tall without this.*/
+				height: 2rem;
+				/*Position the award on the page*/
+				position: absolute;
+				top: 440px;
+				/*Offset from the left a little to account for the padding about the text*/
+				left: 10px;
+			}
+
+			.award_text {
+				/*Set font to bold Roboto to match LinkedIn*/
+				font-family: Roboto;
+				font-weight: bold;
+				/*Set font size to 15 to match the other description sizes*/
+				font-size: 15px;
+				/*Set the text color to LinkedIn Blue*/
+				color: #0A66C2;
+				/*Add horizontal padding to create space between the text and the logo and the text and the edge of the container*/
+				padding: 0px 5px;
+				/*Set margin to 0 to get rid of p margins*/
+				margin: 0;
+			}
+
+			.profile {
+				/*Position the profile options*/
+				position: absolute;
+				top: 475px;
+			}
+
+			.profile_option {
+				/*Set font to bold Roboto to match LinkedIn*/
+				font-family: Roboto;
+				font-weight: bold;
+				/*Set font-size to 15 to match the rest of the profile*/
+				font-size: 15px;
+				/*Set color to LinkedIn blue*/
+				color: #0A66C2;
+				/*Outline the container with LinkedIn Blue*/
+				outline: 2px solid #0A66C2;
+				/*Curve to border radius to make an oval*/
+				border-radius: 50px;
+				/*Adding padding to cushion the labels on the buttons*/
+				padding: 0px 5px;
+				/*Set a horizontal margin to space out the three buttons*/
+				/*It was originally set as 5 for each horizontal side, but that messed up the alignment of the left side of the buttons with every other part of the profile box. I changed it to just be a right margin to fix that issue.*/
+				margin: 0px 10px 0px 0px;
+				height: 30px;
+			}
+
+			.about_container {
+				/*Position the About title*/
+				position: absolute;
+				top: 5px;
+			}
+
+			.edit {
+				/*Position the edit icon in the about section. It didn't fit like the edit icon in the profile section did.*/
+				position: absolute;
+				top: 27px;
+				right: 10px;
+			}
+
+			.about_me {
+				/*Set font to Roboto*/
+				font-family: Roboto;
+				/*Position the description below the About title*/
+				position: absolute;
+				top: 60px;
+				/*I didn't want the description crowding under the edit icon so I set width to 95% to scootch it in.*/
+				width: 95%;
+			}
+
+			.skill1, .skill2, .skill3, .skill4, .skill5, .skill6 {
+				/*Set font to Roboto*/
+				font-family: Roboto;
+				/*Add some horizontal padding to spread the skills out*/
+				padding: 0px 10px;
+				/*I chose to center the text to make it look better after the hover changes. The padding made the hover text go on two lines, but it looked bad without padding so this was my solution.*/
+				text-align: center;
+			}
+
+			.skills_box {
+				/*Curve the edges to match LinkedIn*/
+				border-radius: 20px;
+				/*Outline in a light gray*/
+				outline: 2px solid lightgray;
+				/*Set width to match the about me part*/
+				width: 95%;
+				/*Set the height so the top skills title will fit*/
+				height: 120px;
+				/*Set the position*/
+				position: absolute;
+				top: 150px;
+				left: 15px;
+			}
+
+			.diamond {
+				/*Set to a smaller size to match the top skills title*/
+				height: 30px;
+				width: 30px;
+			}
+
+			.top_skills {
+				/*Position the top skills title*/
+				position: absolute;
+				top: 140px;
+				left: 20px;
+			}
+
+			.activity_container {
+				/*Position the activity title*/
+				position: absolute;
+				top: 5px;
+			}
+
+
+			/*I had to come back here and make some adjustments after changing from a p tag to a div tag for all of the buttons.*/
+			.create {
+				/*Position the create a post button*/
+				position: absolute;
+				/*Change top from 22 to 15 to better position with the div tag*/
+				top: 15px;
+				right: 75px;
+			}
+
+			.post1, .post2, .post3 {
+				/*Set width and height to fit all three posts well within their container. */
+				width: 250px;
+				height: 400px;
+				/*Curve the edges of the posts*/
+				border-radius: 10px;
+				/*Add a box shadow to make the posts stand out.*/
+				box-shadow: 0rem 0.25rem 0.5rem rgba(0, 0, 0, 0.20);
+				/*Set padding to 0 to allow the post images to stretch across the entire width of the post*/
+				padding: 0;
+			}
+
+			.post1 {
+				/*Positioning for post 1*/
+				position: absolute;
+				top: 75px;
+				left: 15px;
+			}
+				
+
+			.post2 {
+				/*Positioning for post 2*/
+				position: absolute;
+				top: 75px;
+				left: 275px;
+			}
+
+			.post3 {
+				/*Positioning for post 3*/
+				position: absolute;
+				top: 75px;
+				right: 15px;
+			}
+
+			.post_avatar {
+				/*Set height and width to 40px. This creates a small avatar to sit within the posts.*/
+				height: 40px;
+				width: 40px;
+				/*Set the position to the top left of the post.*/
+				position: absolute;
+				top: 20px;
+				left: 20px;
+			}
+
+			.post_name {
+				/*Set font to Roboto bold to match the LinkedIn theme*/
+				font-family: Roboto;
+				font-weight: bold;
+				/*Set font size to 1rem to have a small font for the post.*/
+				font-size: 1rem;
+				/*Position the name to sit next to the avatar.*/
+				position: absolute;
+				top: 15px;
+				left: 70px;
+			}
+
+			.post_content1, .post_content2, .post_content3 {
+				/*Set to match the post name. Exclude the bold since the name should be emphasized while this should not.*/
+				font-family: Roboto;
+				font-size: 1rem;
+				/*Position to sit below the avatar and above the eventual picture*/
+				position: absolute;
+				top: 60px;
+				/*Move it 20px from the left to match the avatar*/
+				left: 20px;
+				/*Set the width to 220 to make the content stay within the post bounds and have nice spacing on both sides*/
+				width: 220px;
+			}
+
+			.post_image {
+				/*Set width to match the width of the post. Set height to a good height for the post and also not to distort the image*/
+				width: 250px;
+				height: 175px;
+				/*Position the image*/
+				position: absolute;
+				top: 170px;
+				/*Add a shadow to the bottom of the image*/
+				box-shadow: 0rem 0.25rem 0.5rem rgba(0, 0, 0, 0.20);
+			}
+
+			.post_reactions {
+				/*I did this because I thought it would work to separate the icons evenly. The justify content was not doing what I thought it would so I used gap instead.*/
+				display: flex;
+				/*justify-content: space-between;*/
+				/*I tested a few different gap options and 40 looks perfect*/
+				gap: 40px;
+				/*Position the icons at the bottom of the post*/
+				position: absolute;
+				bottom: 5px;
+			}
+
+			.reaction {
+				/*Set size of reaction icons to be small enough to fit at the bottom of the post.*/
+				width: 25px;
+				height: 25px;
+			}
+
+			.right_title1, .right_title2 {
+				/*Set to match the name class just without the bold*/
+				font-family: Roboto;
+				font-size: 30px;
+				/*Get rid of large p tag margins*/
+				margin: 0;
+				/*Set for to left and leave individual top positioning alone*/
+				position: absolute;
+				left: 20px;
+			}
+
+			.right_title1 {
+				/*Position in the top left of the box*/
+				top: 20px;
+			}
+
+			.right_title2 {
+				/*Position below the hr*/
+				top: 145px;
+			}
+
+			.right_content1, .right_content2 {
+				/*Set to light gray to match LinkedIn*/
+				color: #666666;
+				/*Set font to Roboto to match the rest of the page and font size to 1 to be smaller*/
+				font-family: Roboto;
+				font-size: 1rem;
+				/*Set for individual positioning*/
+				/*Set the left positioning since it is the same*/
+				position: absolute;
+				left: 20px;
+			}
+
+			.right_content1 {
+				/*Position below lang title*/
+				top: 60px;
+			}
+
+			.right_content2 {
+				top: 185px;
+			}
+
+			hr {
+				/*Set color to gray*/
+				background-color: #666666;
+				/*Set height to show the line*/
+    			height: 0.15rem;
+    			/*Curve the line*/
+    			border-radius: 0.5rem;
+    			/*Set the width so it does not span the entire container. I actually ended up making it 20 in per side so it matched the vertical line up of the text.*/
+    			width: 310px;
+    			/*Set some margins*/
+    			margin-top: 1rem;
+    			margin-bottom: 1rem;
+    			margin-left: 0;
+    			/*Position below the first content and center it horizontally.*/
+    			position: absolute;
+    			top: 100px;
+    			left: 20px;
+			}
+
+			/*Had to add an additional hr class for the hr in the ad section*/
+			hr.adhr {
+				top: 215px;
+			}
+
+			.edit_url {
+				/*Position edit icon for url section*/
+				position: absolute;
+				top: 150px;
+				right: 10px;
+			}
+
+			.ad1, .ad2{
+				/*Get rid of padding to fix positioning*/
+				padding: 0;
+				/*Set width to have 20px on each size*/
+				width: 310;
+				/*Position to be 20px from left*/
+				position: absolute;
+				left: 20px;
+			}
+
+			.ad1 {
+				/*Position from top*/
+				top: 80px;
+			}
+
+			.ad2 {
+				/*Position from top*/
+				top: 260px;
+			}
+
+			.ad_image1, .ad_image2 {
+				/*Set size to be appropriate for the ad container*/
+				height: 125px;
+				width: 175px;
+			}
+
+			.ad_title1, .ad_title2 {
+				margin: 0;
+				/*Set font to match LinkedIn brand*/
+				font-family: Roboto;
+				font-weight: bold;
+				font-size: 1rem;
+				/*Set width to contain text in a nice manner*/
+				width: 125px;
+				/*Center align to match and because I think it looks better*/
+				text-align: center;
+			}
+
+			.subscribe {
+				/*Set font to bold Roboto to match LinkedIn*/
+				font-family: Roboto;
+				font-weight: bold;
+				/*Set font-size to 15 to match the rest of the profile*/
+				font-size: 15px;
+				/*Set color to gray*/
+				color: #666666;
+				/*Outline the container with gray*/
+				outline: 2px solid #666666;
+				/*Curve to border radius to make an oval*/
+				border-radius: 50px;
+				/*Adding padding to cushion the labels on the buttons*/
+				padding: 0px 5px;
+				/*Add height to make the button look nicer.*/
+				height: 30px;
+				/*Position for the right and top. I originally had this split in two for positioning and then realized I didn't need to do that because this is contained within an ad div*/
+				position: absolute;
+				right: 25px;
+				top: 90px;
+			}
+
+		</style>
+
+	</head>
+
+	<body>
+		<!--Create the navigation bar-->
+		<nav>
+			<div>
+				<!--Create the blue box linkedin logo-->
+				<div class="inLogo">
+					<p class="in">in</p>
+					<p class="hidden_inequity"></p>
+				</div>
+
+				<!--The options were not lining up how I wanted so I added this outside div with the class options. This created an outer flex blox with space between to have the logo on the left and the four options on the right. The additional div below allowed me to space out the four options-->
+				<div class="options">
+					<!--Create the Home image and text-->
+					<div class="nav_option">
+						<!--image source: freepik.com-->
+						<img class="nav_image" src="../images/home.png" alt="Small illustration of a home">
+						<p class="nav_text">Home</p>
+					</div>
+
+					<!--Add the Jobs image and text-->
+					<div class="nav_option">
+						<!--image source: freepik.com-->
+						<img class="nav_image" src="../images/jobs.png" alt="Small illustration of a briefcase">
+						<p class="nav_text">Jobs</p>
+					</div>
+
+					<!--Add the messaging image and text-->
+					<div class="nav_optionM">						
+						<!--image source: freepik.com-->
+						<img class="nav_image" src="../images/message.png" alt="Small illustration of a text bubble">
+						<p class="nav_textM">Messaging</p>
+					</div>
+
+					<!--Add the avatar. Change the class because this shouldn't be that gray color.-->
+					<div class="nav_option">
+						<!--image source: freepik.com-->
+						<img class="nav_avatar" src="../images/avatar.png" alt="Small avatar of a woman">
+						<p class="nav_text">Me</p>
+					</div>
+
+				</div>
+
+			</div>
+		</nav>
+
+		<!--Create the large box for the main profile information. I chose to do it in a similar fashion to above where there is a div for the outer box containing pieces inside. I'm not sure what that will look like yet so I expect it may change. I am hoping to use a general box div for all, but that may change as well. -->
+		<!--I decided to have mutliple boxes for each section. They are going to share a majority of the css, but the heights will change.-->
+		<div class="box1">
+			<!--I originally tried to do the image without another container, but realized it was not working the way I wanted it to. I found a tutorial (linked in the css) that showed me how to fill a container with an image so I added another div.-->
+			<div class="banner_box">
+				<!--I chose a UMW image for the banner since the avatar is a computer science student at UMW.-->
+				<!--image source: umw.edu-->
+				<img class="banner" src="../images/umw.jpg" alt="Image of the UMW CRUC">
+			</div>
+
+			<!--Put the larger avatar over the banner image-->
+			<div>
+				<!--image source: freepik.com-->
+				<img src="../images/avatar.png" alt="Small image of a women avatar in purple" class="avatar">
+			</div>
+
+			<!--Put the open to work badge over the avatar image-->
+			<div class="badge">
+				<h1 class="badge_text">#OPENTOWORK</h1>
+			</div>
+
+			<!--Add the edit icon on the right side-->
+			<!--image source: freepik.com-->
+			<img class="edit_img" src="../images/edit.png" alt="Small image of a pencil outline">
+
+			<!--Add the school logo and name-->
+			<!--image source: umw.edu-->
+			<div class="school">
+				<img class="school_logo" src="../images/umw_logo.jpg" alt="Circle logo for the University of Mary Washington">
+				<p class="school_text">University of Mary Washington</p>
+			</div>
+			
+			<!--Add the name and verification symbol-->
+			<div class="name_container">
+				<p class="name">Jane Doe</p>
+				<img class="verify" src="../images/verified.png" alt="Symbol of a shield with a check mark indicating a verified user">
+			</div>
+
+			<!--Add the description. I'm hoping to get the title, location, contact, and connections all in one div.-->
+
+			<!--Having a singular div did not work so I split it up into separate divs-->			
+			<div class="descp">Computer Science Student at the University of Mary Washington</div>
+
+			<div class="location">Washington, DC</div>
+			<span class="profile_dot"></span>
+			<div class="contact">Contact</div>
+
+			<div class="connections">45 connections</div>
+			
+			<!--Create the top voice div-->
+			<div class="award">
+				<!--Recycle the logo from earlier but change the sizes in the styles tag above-->
+				<div class="smallInLogo">
+					<p class="smallIn">in</p>
+				</div>
+				<p class="award_text">Top Voice</p>
+			</div>
+
+			<!--Add profile editing options. I'm hoping to get this in one div with different div classes inside-->
+			<!--The profile options were originally p tags but when I went to reuse it for the Subscribe button on ads, I found that the div worked better.-->
+			<div class="profile">
+				<div class="profile_option">Open to</div>
+				<div class="profile_option">Add Section</div>
+				<div class="profile_option">. . .</div>
+			</div>
+		</div>
+
+		<div class="box2">
+
+			<!--Add the title for the about box. I chose to use the same class I used for the name since the About label should be the same size-->
+			<div class="about_container">
+				<p class="name">About</p>
+			</div>
+
+			<!--I had to create a class to contain the edit icon for this box because it needed extra positioning-->
+			<div class="edit">
+				<!--Image source: freepik.com-->
+				<img class="edit_img" src="../images/edit.png" alt="Small image of a pencil outline">
+			</div>
+
+			<!--Add the short description-->
+			<div class="about_me">
+				I am a senior computer science student at the University of Mary Washington with experience across multiple research areas. I am skilled in a multitude of programming languages and in other... more
+			</div>
+
+			<!--Add the top skills box. I'm hoping to get everything in one div-->
+			<div class="top_skills">
+				<!--Image source: freepik.com-->
+				<img class="diamond" src="../images/diamond.png" alt="Small diamond outline icon">
+				<p class="name">Top skills</p>
+			</div>
+
+			<!--I had to separate the top skills title and the actual box containing the list of skills. Each skill is separated by the same dot found in the profile box. -->
+			<!--I had to separate the skills into numbered ones to do the javascript switch over-->
+			<div class="skills_box">
+				<p class="skill1">Communication</p>
+				<span class="dot"></span>
+				<p class="skill2">Leadership</p>
+				<span class="dot"></span>
+				<p class="skill3">Teamwork</p>
+				<span class="dot"></span>
+				<p class="skill4">Critical Thinking</p>
+				<span class="dot"></span>
+				<p class="skill5">Java</p>
+				<span class="dot"></span>
+				<p class="skill6">Pandas</p>
+			</div>
+
+		</div>
+
+		<div class="box3">
+
+			<!--Create the Activity title using the name class and an individual container class for positioning-->
+			<div class="activity_container">
+				<p class="name">Activity</p>
+			</div>
+
+			<!--I was able to reuse the edit class from positioning the about edit icon-->
+			<div class="edit">
+				<!--Image source: freepik.com-->
+				<img class="edit_img" src="../images/edit.png" alt="Small image of a pencil outline">
+			</div>
+
+			<!--Make the create a post button and position it next to the edit icon-->
+			<div class="create">
+				<!--I was able to reuse the profile option class to make the button for creating a post. I had to use a different div for positioning the button though.-->
+				<!--Change to div instead of p tag.-->
+				<div class="profile_option">Create a post</div>
+			</div>
+
+			<!--Create a general post to start that can hopefully be reused. I imagine I'll have to split it into individual ones for positioning.-->
+			<!--So I decided to work on positioning first so I would have a definitive size. Now I will focus on getting a general look for post1.-->
+			<!--After finishing post 1, it looks amazing! I think I should be able to just copy the structure and change the content.-->
+			<div class="post1">
+				<!--create the avatar and name at the top of the post. Copy and paste this to the other posts.-->
+				<img src="../images/avatar.png" alt="Small image of a women avatar in purple" class="post_avatar">
+				<p class="post_name">Jane Doe</p>
+				
+				<!--Add and position the content-->
+				<p class="post_content1">So excited to announce that my company is moving forward with an amazing product! Credit: JohnDoe14</p>
+
+				<!--Add and position the image-->
+				<!--Source: istockphoto.com-->
+				<img src="../images/idea.jpg" alt="Man presenting in front of a whiteboard" class="post_image">
+
+				<!--Add reactions bar at the bottom of the post.-->
+				<div class="post_reactions">
+					<!--Thumbs up icon for the like button. Source: freepik.com-->
+					<img src="../images/like.png" alt="Small thumbs up icon" class="reaction">
+
+					<!--Message icon for the comment button. Source: freepik.com-->
+					<img src="../images/message.png" alt="Small illustration of a text bubble" class="reaction">
+
+					<!--Repost icon for the repost button. Source: freepik.com-->
+					<img src="../images/repost.png" alt="Repost icon" class="reaction">
+
+					<!--Paper airplane icon for the send button. Source: freepik.com-->
+					<img src="../images/send.png" alt="Paper airplane icon" class="reaction">
+
+				</div>
+
+			</div>
+
+			<!--Copying the structure over worked amazingly and now I am going to change this content to match the Figma mockup for post2.-->
+			<div class="post2">
+				<!--Create the avatar and name.-->
+				<img src="../images/avatar.png" alt="Small image of a women avatar in purple" class="post_avatar">
+				<p class="post_name">Jane Doe</p>
+				
+				<!--Add and position the content-->
+				<p class="post_content2">Always grateful for advice on handling client calls! Thank you Chris!</p>
+
+				<!--Add and position the image-->
+				<!--Source: stock.adobe.com-->
+				<img src="../images/client_call.jpg" alt="Man talking to a woman at an office table" class="post_image">
+
+				<!--Add reactions bar at the bottom of the post.-->
+				<div class="post_reactions">
+					<!--Thumbs up icon for the like button. Source: freepik.com-->
+					<img src="../images/like.png" alt="Small thumbs up icon" class="reaction">
+
+					<!--Message icon for the comment button. Source: freepik.com-->
+					<img src="../images/message.png" alt="Small illustration of a text bubble" class="reaction">
+
+					<!--Repost icon for the repost button. Source: freepik.com-->
+					<img src="../images/repost.png" alt="Repost icon" class="reaction">
+
+					<!--Paper airplane icon for the send button. Source: freepik.com-->
+					<img src="../images/send.png" alt="Paper airplane icon" class="reaction">
+				</div>
+			</div>
+
+			<!--Adjust the content for post3 to match Figma-->
+			<div class="post3">
+				<!--Create the avatar and name at the top.-->
+				<img src="../images/avatar.png" alt="Small image of a women avatar in purple" class="post_avatar">
+				<p class="post_name">Jane Doe</p>
+				
+				<!--Add and position the content-->
+				<p class="post_content3">Celebrating one year at my company!</p>
+
+				<!--Add and position the image-->
+				<!--Source: stock.adobe.com-->
+				<img src="../images/celebration.jpg" alt="Celebratory image with office workers and confetti" class="post_image">
+
+				<!--Add reactions bar at the bottom of the post.-->
+				<div class="post_reactions">
+					<!--Thumbs up icon for the like button. Source: freepik.com-->
+					<img src="../images/like.png" alt="Small thumbs up icon" class="reaction">
+
+					<!--Message icon for the comment button. Source: freepik.com-->
+					<img src="../images/message.png" alt="Small illustration of a text bubble" class="reaction">
+
+					<!--Repost icon for the repost button. Source: freepik.com-->
+					<img src="../images/repost.png" alt="Repost icon" class="reaction">
+
+					<!--Paper airplane icon for the send button. Source: freepik.com-->
+					<img src="../images/send.png" alt="Paper airplane icon" class="reaction">
+				</div>
+			</div>
+
+		</div>
+
+		<!--Now that I have the main boxes done, I am going to add the two right side boxes-->
+		<div class="lang">
+			<!--Add the title-->
+			<p class="right_title1">Profile Language</p>
+
+			<!--Add the edit icon. I was able to reuse the same class from the about section edit icon.-->
+			<div class="edit">
+				<!--Image source: freepik.com-->
+				<img class="edit_img" src="../images/edit.png" alt="Small image of a pencil outline">
+			</div>
+			<!--Add the content for the top half of the box. I'm hoping to use one class for the entire box.-->
+			<p class="right_content1">English</p>
+
+			<hr>
+
+			<!--Add the title for the bottom half of the box-->
+			<p class="right_title2">Public Profile & URL</p>
+
+			<!--Add the edit icon. I had to add a new class to fix the positioning for this part.-->
+			<div class="edit_url">
+				<!--Image source: freepik.com-->
+				<img class="edit_img" src="../images/edit.png" alt="Small image of a pencil outline">
+			</div>
+
+			<!--Add the content to the lower half. I had to separate the classes for positioning reasons.-->
+			<p class="right_content2">www.linkedin.com/in/jane27</p>
+
+		</div>
+
+		<!--Time to add the ads!-->
+		<div class="ads">
+			<!--Add the title. I was able to reuse the class for the title in the box above.-->
+			<p class="right_title1">You might like</p>
+
+			<!--I'm going to do the ads in a similar way as the posts. I'm going to split them for positioning and focus on the first one for the content before hopefully copying the structure and just changing the content.-->
+			<div class="ad1">
+				<!--Add image. Source: istockphoto.com-->
+				<img src="../images/communicate.jpg" alt="A woman presenting in front of tv" class="ad_image1">
+
+				<!--Add the title of the ad-->
+				<p class="ad_title1">Communicate with Clarity</p>
+
+				<div class="subscribe">Subscribe</div>
+			</div>
+
+			<hr class="adhr">
+
+			<div class="ad2">
+				<!--Add image. Source: holistiquetraining.com-->
+				<img src="../images/leader.jpg" alt="A woman standing behind a large conference table" class="ad_image2">
+
+				<!--Add the title of the ad-->
+				<p class="ad_title2">Lead with Confidence</p>
+
+				<div class="subscribe">Subscribe</div>
+			</div>
+
+		</div>
+
+	</body>
+
+	<!--Add javascript interactions-->
+	<script>
+		/*Do the switch between in and inequity for the LinkedIn logo*/
+		let logo = document.querySelector(".inLogo");
+		let logotext = document.querySelector(".hidden_inequity");
+		logo.addEventListener("mouseover", function(){
+			/*Switch the color to pink and add the equity text so it displays inequity*/
+			logo.style.backgroundColor = "pink";
+			logotext.innerText = "equity";
+		});
+
+		logo.addEventListener("mouseout", function(){
+			/*Change the color back to LinkedIn blue and remove the equity text*/
+			logo.style.backgroundColor = "#0A66C2";
+			logotext.innerText = "";
+		});
+
+
+		/*Do the switch between messaging and unsolicited advice*/
+		/*I originally used just the text part, but I really wanted it to happen when hovering over any part of the messaging area so I expanded it to the container holding the icon and the text.*/
+		let message = document.querySelector(".nav_optionM");
+		let text = document.querySelector(".nav_textM");
+		message.addEventListener("mouseover", function(){
+			/*Switch the message to say unsolicited advice*/
+			text.innerText = "Unsolicited Advice";
+		});
+
+		message.addEventListener("mouseout", function(){
+			/*Change the text back to Messaging*/
+			text.innerText = "Messaging";
+		});
+
+		/*Switch Open to work to Open to being taken seriously*/
+		/*badge is the container, badge_text is the actual text*/
+		let badge = document.querySelector(".badge");
+		let badge_text = document.querySelector(".badge_text");
+		badge.addEventListener("mouseover", function(){
+			/*Switch the badge to say open to being taken seriously*/
+			badge_text.innerText = "#OPENTOBEINGTAKENSERIOUSLY";
+			/*Set width to 350 to contain the longer text*/
+			badge_text.style.width = "350px";
+		});
+
+		badge.addEventListener("mouseout", function(){
+			/*Switch back to OPENTOWORK*/
+			badge_text.innerText = "#OPENTOWORK";
+			/*Switch width back to 200 like it was*/
+			badge_text.style.width = "200px";
+		});
+
+		/*Switch Top voice to top interrupted voice*/
+		/*I chose to do this in a similar way to the badge where I didn't need to change anything in the outer container (award and badge), but I wanted the actual space for hovering to be larger so I added the listeners to those parts.*/
+		let award = document.querySelector(".award");
+		let award_text = document.querySelector(".award_text");
+		award.addEventListener("mouseover", function(){
+			/*Switch the text to say top interrupted voice*/
+			award_text.innerText = "Top Interrupted Voice";
+			/*I thought I would have to adjust the width too, but it is dynamically adjusting!*/
+		});
+
+		award.addEventListener("mouseout", function(){
+			/*Switch text back to top voice*/
+			award_text.innerText = "Top Voice";
+		});
+
+		/*Switch top skills to the altered ones*/
+		let skills_box = document.querySelector(".skills_box");
+		let skill1 = document.querySelector(".skill1");
+		let skill2 = document.querySelector(".skill2");
+		let skill3 = document.querySelector(".skill3");
+		let skill4 = document.querySelector(".skill4");
+		let skill5 = document.querySelector(".skill5");
+		let skill6 = document.querySelector(".skill6");
+		skills_box.addEventListener("mouseover", function(){
+			skill1.innerText = "Smiling";
+			skill2.innerText = "Not Too Assertive";
+			skill3.innerText = "Being Interrupted";
+			skill4.innerText = "Calm Suggesting";
+			skill5.innerText = "Getting Coffee";
+			/*This was originally supposed to change to an image, but I decided to keep it more closely related to the original.*/
+			skill6.innerText = "Surprisingly Technical";
+		});
+
+		skills_box.addEventListener("mouseout", function(){
+			skill1.innerText = "Communication";
+			skill2.innerText = "Leadership";
+			skill3.innerText = "Teamwork";
+			skill4.innerText = "Critical Thinking";
+			skill5.innerText = "Java";
+			skill6.innerText = "Pandas";
+		});
+
+		/*Switch each individual post over*/
+		/*The switch for post 1*/
+		let post1 = document.querySelector(".post1");
+		let post_content1 = document.querySelector(".post_content1");
+
+		post1.addEventListener("mouseover", function(){
+			/*Change the text of the post1*/
+			post_content1.innerText = "Thrilled to announce that my idea was repeated by a male colleague and finally taken seriously! Credit: JohnDoe14";
+		});
+		post1.addEventListener("mouseout", function(){
+			/*Change the text back*/
+			post_content1.innerText = "So excited to announce that my company is moving forward with an amazing product! Credit: JohnDoe14";
+		});
+
+		/*The switch for post 2*/
+		let post2 = document.querySelector(".post2");
+		let post_content2 = document.querySelector(".post_content2");
+
+		post2.addEventListener("mouseover", function(){
+			/*Change the text of post2*/
+			post_content2.innerText = "Appreciative for the reminder to ‘smile more’ during client calls! Thank you Chris!";
+		});
+		post2.addEventListener("mouseout", function(){
+			/*Change the text back*/
+			post_content2.innerText = "Always grateful for advice on handling client calls! Thank you Chris!";
+		});
+
+		/*The switch for post3*/
+		let post3 = document.querySelector(".post3");
+		let post_content3 = document.querySelector(".post_content3");
+
+		post3.addEventListener("mouseover", function(){
+			/*Switch text over*/
+			post_content3.innerText = "Celebrating one year of being the only woman in the room!";
+		});
+		post3.addEventListener("mouseout", function(){
+			/*Switch text back*/
+			post_content3.innerText = "Celebrating one year at my company!";
+		});
+
+		/*Switch each individual add over*/
+		/*Change ad 1*/
+		let ad1 = document.querySelector(".ad1");
+		let ad_image1 = document.querySelector(".ad_image1");
+		let ad_title1 = document.querySelector(".ad_title1");
+		ad1.addEventListener("mouseover", function(){
+			/*Switch image*/
+			/*There was a pretty noticable delay when switching the picture, but it looks like it was just for loading it the first time. There doesn't appear to be a delay on subsequent changes.*/
+			ad_image1.src = "../images/smile.jpg";
+			/*Switch title over*/
+			ad_title1.innerText = "Don't Forget to Smile!";
+		});
+
+		ad1.addEventListener("mouseout", function(){
+			/*Switch image back to original*/
+			ad_image1.src = "../images/communicate.jpg";
+			/*Change title back*/
+			ad_title1.innerText = "Communicate with Clarity";
+		});
+
+		/*Change ad 2*/
+		let ad2 = document.querySelector(".ad2");
+		let ad_image2 = document.querySelector(".ad_image2");
+		let ad_title2 = document.querySelector(".ad_title2");
+		ad2.addEventListener("mouseover", function(){
+			/*Switch image*/
+			/*There was a pretty noticable delay when switching the picture, but it looks like it was just for loading it the first time. There doesn't appear to be a delay on subsequent changes.*/
+			ad_image2.src = "../images/assertive.jpg";
+			/*Switch title over*/
+			ad_title2.innerText = "Don't Be Too Assertive";
+		});
+
+		ad2.addEventListener("mouseout", function(){
+			/*Switch image back to original*/
+			ad_image2.src = "../images/leader.jpg";
+			/*Change title back*/
+			ad_title2.innerText = "Lead with Confidence";
+		});
+		
+	</script>
+
 </html>
