@@ -11,7 +11,7 @@
 			4. "Top Voice" -> "Top Interrupted Voice" Women are often interrupted during meetings when they are attempting to have their ideas heard.
 			5. Targeted ads. Women are more likely to be targeted with ads addressing their soft skills. The included ads targeting soft skills will change to reflect the more sexist advice women tend to receive in a professional setting.
 			6. Top Skills. Women tend to be favored more for soft skills and their technical skills tend not to be taken seriously. Any soft skills are rephrased to a sexist tone and technical skills are rewritten.
-			7. Activity. Posts on linkedIn tend to be very positive and I wanted to flip that. The original posts are very positive comments. The unbranded posts maintain a positive tone, but shift to realistic comments about struggles women face in professional settings.
+			7. Activity. Posts on LinkedIn tend to be very positive and I wanted to flip that. The original posts are very positive comments. The unbranded posts maintain a positive tone, but shift to realistic comments about struggles women face in professional settings.
 		-->
 
 
@@ -803,6 +803,7 @@
 					</div>
 
 					<!--Add the messaging image and text-->
+					<!--This option has a different class name with the same exact styling for the javascript to find it-->
 					<div class="nav_optionM">						
 						<!--image source: freepik.com-->
 						<img class="nav_image" src="../images/message.png" alt="Small illustration of a text bubble">
@@ -860,7 +861,6 @@
 			</div>
 
 			<!--Add the description. I'm hoping to get the title, location, contact, and connections all in one div.-->
-
 			<!--Having a singular div did not work so I split it up into separate divs-->			
 			<div class="descp">Computer Science Student at the University of Mary Washington</div>
 
@@ -954,6 +954,7 @@
 			<!--Create a general post to start that can hopefully be reused. I imagine I'll have to split it into individual ones for positioning.-->
 			<!--So I decided to work on positioning first so I would have a definitive size. Now I will focus on getting a general look for post1.-->
 			<!--After finishing post 1, it looks amazing! I think I should be able to just copy the structure and change the content.-->
+			<!--I separated the post_content class into three separate classes with the same styling so I could personalize each switch over with javascript-->
 			<div class="post1">
 				<!--create the avatar and name at the top of the post. Copy and paste this to the other posts.-->
 				<img src="../images/avatar.png" alt="Small image of a women avatar in purple" class="post_avatar">
@@ -1079,6 +1080,7 @@
 			<p class="right_title1">You might like</p>
 
 			<!--I'm going to do the ads in a similar way as the posts. I'm going to split them for positioning and focus on the first one for the content before hopefully copying the structure and just changing the content.-->
+			<!--I split the ad title and ad image into two separate classes with identical styling just so Javascript could identify and change them separately.-->
 			<div class="ad1">
 				<!--Add image. Source: istockphoto.com-->
 				<img src="../images/communicate.jpg" alt="A woman presenting in front of tv" class="ad_image1">
@@ -1189,6 +1191,7 @@
 		});
 
 		skills_box.addEventListener("mouseout", function(){
+			/*Switch all of the text back to the original*/
 			skill1.innerText = "Communication";
 			skill2.innerText = "Leadership";
 			skill3.innerText = "Teamwork";
