@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<title>CSS Battle</title>
+
+		<style>
+
+			body {
+				background-color: #12219A;
+				padding: 30px;
+			}
+
+			.square {
+				background-color: #70CCDB;
+				width: 100px;
+				height: 100px;
+			}
+
+			.circle {
+				background-color: #DB5EAD;
+				width: 100px;
+				height: 100px;
+				border-radius: 100%;
+			}
+
+			div {
+				display: flex;
+				justify-content: space-between;
+				width: 225px;
+			}
+
+			.topright {
+				position: absolute;
+				top: 30px;
+				right: 30px;
+			}
+
+			.bottomleft {
+				position: absolute;
+				bottom: 30px;
+				left: 30px;
+			}
+
+			.bottomright {
+				position: absolute;
+				bottom: 30px;
+				right: 30px;
+			}
+
+		</style>
+		
+	</head>
+	<body>
+		<div>
+			<div class="square"></div>
+			<div class="circle"></div>
+		</div>
+
+		<div class="topright">
+			<div class="circle"></div>
+			<div class="square"></div>
+		</div>
+
+		<div class="bottomleft">
+			<div class="circle"></div>
+			<div class="square"></div>
+		</div>
+
+		<div class="bottomright">
+			<div class="square"></div>
+			<div class="circle"></div>
+		</div>
+
+	</body>
+</html>
