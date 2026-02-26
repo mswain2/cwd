@@ -9,7 +9,11 @@
 
 			body {
 				background-color: #12219A;
-				padding: 30px;
+				padding: 20px;
+				display: flex;
+				flex-direction: column;
+				height: 90vh;
+				justify-content: space-between;
 			}
 
 			.square {
@@ -31,46 +35,45 @@
 				width: 225px;
 			}
 
-			.topright {
-				position: absolute;
-				top: 30px;
-				right: 30px;
+			.top {
+				display: flex;
+				justify-content: space-between;
+				width: 100%;
 			}
 
-			.bottomleft {
-				position: absolute;
-				bottom: 30px;
-				left: 30px;
-			}
-
-			.bottomright {
-				position: absolute;
-				bottom: 30px;
-				right: 30px;
+			.bottom {
+				display: flex;
+				justify-content: space-between;
+				width: 100%;
+				
 			}
 
 		</style>
 		
 	</head>
 	<body>
-		<div>
-			<div class="square"></div>
-			<div class="circle"></div>
+		<div class="top">
+			<div>
+				<div class="square"></div>
+				<div class="circle"></div>
+			</div>
+
+			<div>
+				<div class="circle"></div>
+				<div class="square"></div>
+			</div>
 		</div>
 
-		<div class="topright">
-			<div class="circle"></div>
-			<div class="square"></div>
-		</div>
+		<div class="bottom">
+			<div>
+				<div class="circle"></div>
+				<div class="square"></div>
+			</div>
 
-		<div class="bottomleft">
-			<div class="circle"></div>
-			<div class="square"></div>
-		</div>
-
-		<div class="bottomright">
-			<div class="square"></div>
-			<div class="circle"></div>
+			<div>
+				<div class="square"></div>
+				<div class="circle"></div>
+			</div>
 		</div>
 
 	</body>
