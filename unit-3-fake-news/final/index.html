@@ -32,8 +32,10 @@
   		body {
   			/*Set page font to Josefin Slab to match mockup*/
   			font-family: "Josefin Slab", serif;
-  			/*Set background of page to */
+  			/*Set background of page to linen. I like that it kind of mimics actual newspaper.*/
   			background-color: var(--linen);
+  			/*Set text color to jet black. It looks like a really dark navy blue*/
+  			color: var(--jet-black);
   		}
 
   		.row {
@@ -44,6 +46,36 @@
   		.col {
   			/*Add a border so I can see while setting up the layout*/
   			border: 1px solid black;
+  			padding: 12px;
+  		}
+  		
+  		.paw {
+  			width: 100px;
+  			height: 100px;
+  		}
+
+  		.header {
+  			border-bottom: 2px solid var(--jet-black);
+  		}
+
+  		h1 {
+  			font-weight: bold;
+  			margin: 0;
+  			margin-top: 10px;
+  		}
+
+  		h3 {
+  			margin: 0;
+  		}
+
+  		h2 {
+  			margin: 0;
+  			margin-top: 10px;
+  		}
+
+  		.main_picture {
+  			width: 350px;
+  			height: 400px;
   		}
 
   	</style>
@@ -52,9 +84,27 @@
 	<!-- I'm starting by setting up the basic layout for the grid. -->
 	<div class="container text-center">
 		<!--I am going to have four main rows with their own nested columns (and possibly more nested stuff)-->
-		<div class="row">
+		<div class="row header">
 			<!--This will likely have three columns, but we'll see.-->
-			Title
+			<!--It does in fact need three columns.-->
+			<div class="col col-2">
+				<!--I wanted cute paw prints on either side of the title.-->
+				<!--Source: freepik.com-->
+				<img class="paw" src="../images/paw.png" alt="Paw print">
+			</div>
+			
+			<div class="col">
+				<!--Here is the title for my paper-->
+				<h1>The Dallas Review</h1>
+				<!--This is empty because I wanted the date to change every day.-->
+				<h3 class="today"></h3>
+			</div>
+
+			<div class="col col-2">
+				<!--The other paw print-->
+				<!--Source: freepik.com-->
+				<img class="paw" src="../images/paw.png" alt="Paw print">
+			</div>
 		</div>
 
 		<div class="row">
@@ -70,8 +120,12 @@
 			</div>
 
 			<!--No nesting-->
+			<!--I am decided to start with this column for this row section because I think it will require the most arranging.-->
 			<div class="col">
-				Middle chunk
+				<!--Cute picture of my dog in a bowtie!-->
+				<img class="main_picture" src="../images/march.jpg" alt="A beagle wearing a St. Patrick's themed bowtie">
+				<!--This is just a quick little title for the image. Kind of like a feature image in the newspaper. I also thought it would be funny to have a play on march madness.-->
+				<h2>March Bowtie Madness!</h2>
 			</div>
 
 			<!--Two nested rows-->
@@ -108,5 +162,14 @@
 	
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script>
+		/*This is the javascript to get the date to stay updated everyday*/
+		let today = document.querySelector(".today");
+		let date = new Date();
+		/*Here is a tutorial I used for the exact formatting: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString*/
+		let options = { weekday: "long", year: "numeric", month: "long", day: "numeric",};
+		/*Set the html where the date should be to the formatted date string.*/
+		today.innerText = date.toLocaleDateString(undefined, options);
+	</script>
 </body>
 </html>
