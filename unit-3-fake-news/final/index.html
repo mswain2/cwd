@@ -7,6 +7,7 @@
 	<!-- 
 	About this page:
 		For the Fake News assignment, I wanted to focus on news based on something that makes me really happy which is my dog. I wanted to have a mixture of news about my dog (his spa trips, his birthday) and funny general dog news (decline in treats, etc.). I really just wanted to have a positive paper that represented everything about dogs and my dog specifically. In my Figma prototype, I used a cute and fun font, included cute pictures of my dog, and made funny positive new titles and subtitles. I laid it out in a nice grid fashion with a perception of three columns and four rows.
+		I think this assignment turned out really well. The grid was really nice and made the layout really easy. I had a lot of fun with this project as well especially since it was focused on good news and bringing happiness to people. I obviously chose something that makes everyone happy: cute dogs (specifically my cute dog). I think this turned out really cute and funny! I don't think I made any major changes from my mockup because the grid made layout so easy.
 
 	-->
 	<title>Fake News</title>
@@ -70,9 +71,9 @@
   		}
 
   		.main_picture {
-  			/*Set width and height of main picture*/
+  			/*Set width and height of main picture. I set it generally to start, and then made it so it matched the height of the two outer columns*/
   			width: 350px;
-  			height: 400px;
+  			height: 450px;
   		}
 
   		/*This is the class for the breaking news and live stuff. I am making the text red.*/
@@ -178,6 +179,7 @@
 					<div class="col">
 						<img src="../images/puppy_eyes.jpeg" class="story_image" alt="Picture of Dallas doing puppy eyes at the camera">
 					</div>
+					<!--The content for the story-->
 					<div class="col">
 						<p class="story">Dallas shares tips and tricks on how to perfect the art of “puppy dog eyes”.</p>
 						<p class="read">5 min read</p>
@@ -207,10 +209,12 @@
 						<!--Include the updates thing-->
 						<p class="update">See more updates ></p>
 					</div>
+
 					<div class="col">
 						<img src="../images/spa.jpeg" class="story_image" alt="Picture of Dallas after a spa trip">
 					</div>
 				</div>
+
 				<div class="row">
 					<!--This is the fourth story. In addition to cute stories about my dog, I wanted to include some stories about topics he would be intereseted in. This story is a funny comment on a decline in the amount of treats he is receiving.-->
 					<h3 class="story_title">Possible Decrease in Treat Receival</h3>
@@ -221,23 +225,31 @@
 		</div>
 
 		<!--This chunk will have three columns.-->
-		<div class="row">
+		<div class="row story_line">
+			<!--This story is a funny play on those law commercials for lawsuit compensation.-->
 			<div class="col">
-				Chunk 1
+				<h3 class="story_title">Left at Home for Long Periods of Time?</h3>
+				<p class="story">You may be qualified to receive compensation.</p>
 			</div>
 
+			<!--This story is a fun update on Dallas and his birthday that is coming up soon! I really just wanted a whole paper focused on my dog. He is my favorite source for good news.-->
 			<div class="col">
-				Chunk 2
+				<h3 class="story_title">Dallas Turns 9 in April</h3>
+				<p class="story">Stay up-to-date on The Dallas Review to receive party details!</p>
 			</div>
 
+			<!--This story is a look into Dallas and his daily routine. Spoiler, it's 90% sleeping.-->
 			<div class="col">
-				Chunk 3
+				<h3 class="story_title">Dallas Suggests Daily Habits</h3>
+				<p class="story">Sleeping, eating, walking, and more sleeping! Dallas shares a day in the life and gives advice on living your best doggy life!</p>
 			</div>
 		</div>
 
 		<!--This is just a chunk for the copyright at the bottom. No need for nesting here.-->
 		<div class="row">
-			Copyright
+			<!--I just wanted to have a quick little copyright at the bottom after seeing a similar thing in the critical web design github.-->
+			<!--This source has been so helpful for using symbols in html: https://www.w3schools.com/html/html_symbols.asp-->
+			<p>&copy The Dallas Review 2026</p>
 		</div>
 	</div>
 	
