@@ -58,24 +58,57 @@
   			border-bottom: 2px solid var(--jet-black);
   		}
 
+  		/*All of the margins were messing up the formatting so I removed them. I added a top margin to help with the spacing.*/
+  		h1, h2, h3 {
+  			margin: 0;
+  			margin-top: 10px;
+  		}
+
   		h1 {
+  			/*Make the font bold so the title stands out*/
   			font-weight: bold;
-  			margin: 0;
-  			margin-top: 10px;
-  		}
-
-  		h3 {
-  			margin: 0;
-  		}
-
-  		h2 {
-  			margin: 0;
-  			margin-top: 10px;
   		}
 
   		.main_picture {
+  			/*Set width and height of main picture*/
   			width: 350px;
   			height: 400px;
+  		}
+
+  		/*This is the class for the breaking news and live stuff. I am making the text red.*/
+  		.urgent {
+  			color: var(--vibrant-coral);
+  			/*Bold the font to make it more readable.*/
+  			font-weight: bold;
+  			/*Left align the text*/
+  			text-align: left;
+  			/*The auto bottom margin was way too big so I readjusted it to be only 5 pixels.*/
+  			margin-bottom: 5px;
+
+  		}
+
+  		/*This is the styling for all of the story titles*/
+  		.story_title {
+  			font-weight: bold;
+  			text-align: left;
+  		}
+
+  		/*This is the styling for all of the story subtitles/descriptions*/
+  		.story {
+  			text-align: left;
+  			/*I increased the font-size to make it more readable. The default font size was just too small.*/
+  			font-size: 1.2rem;
+  			/*There is a large botom margin so I readjusted to 5 pixels to match the LIVE tag*/
+  			margin-bottom: 5px;
+  		}
+
+  		/*This is the styling for the see more updates part*/
+  		.update {
+  			font-weight: bold;
+  			/*Align to the left*/
+  			text-align: left;
+  			/*Remove excessive margin*/
+  			margin: 0;
   		}
 
   	</style>
@@ -108,11 +141,14 @@
 		</div>
 
 		<div class="row">
-			<!--This row should have three column. The middle column will remain the same while the two outer columns will have two nested rows.-->
+			<!--This row should have three columns. The middle column will remain the same while the two outer columns will have two nested rows.-->
 			<!--Two nested rows.-->
 			<div class="col">
 				<div class="row">
-					First
+					<p class="urgent">LIVE 11m ago</p>
+					<h3 class="story_title">Dallas is Welcoming March in a Dapper Fashion</h3>
+					<p class="story">Dallas is featuring his March bowtie that is covered in clovers, Leprechaun hats, and other fun March symbols!</p>
+					<p class="update">See more updates ></p>
 				</div>
 				<div class="row">
 					Second
