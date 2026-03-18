@@ -25,7 +25,7 @@
 			--linen: #feefe5ff;
 			--vibrant-coral: #ff715bff;
 			--pacific-blue: #4da1a9ff;
-			--charcoal-blue: #364f59ff;
+			--charcoal-blue: #5f7d95ff;
 			--jet-black: #28343eff;
   		}
 
@@ -40,13 +40,13 @@
 
   		.row {
   			/*Add a border so I can see while setting up the layout*/
-  			border: 1px solid black;
+  			/*border: 1px solid black;*/
   		}
 
   		.col {
   			/*Add a border so I can see while setting up the layout*/
-  			border: 1px solid black;
-  			padding: 12px;
+  			/*border: 1px solid black;*/
+  			padding: 10px;
   		}
   		
   		.paw {
@@ -64,7 +64,7 @@
   			margin-top: 10px;
   		}
 
-  		h1 {
+  		h1, h2 {
   			/*Make the font bold so the title stands out*/
   			font-weight: bold;
   		}
@@ -83,12 +83,14 @@
   			/*Left align the text*/
   			text-align: left;
   			/*The auto bottom margin was way too big so I readjusted it to be only 5 pixels.*/
-  			margin-bottom: 5px;
+  			/*I realized that my top margin for the headings was not applying to my story titles. So I fixed that and now need to remove the bottom margin fully so there isn't too much space.*/
+  			margin-bottom: 0px;
 
   		}
 
   		/*This is the styling for all of the story titles*/
   		.story_title {
+  			margin-top: 10px;
   			font-weight: bold;
   			text-align: left;
   		}
@@ -102,6 +104,11 @@
   			margin-bottom: 5px;
   		}
 
+  		/*This is the class for an image within a story*/
+  		.story_image {
+  			width: 200px;
+  		}
+
   		/*This is the styling for the see more updates part*/
   		.update {
   			font-weight: bold;
@@ -109,6 +116,19 @@
   			text-align: left;
   			/*Remove excessive margin*/
   			margin: 0;
+  		}
+
+  		/*This is the styling for the time to read comments below the stories*/
+  		.read {
+  			/*Left align text*/
+  			text-align: left;
+  			/*Set to lighter text color*/
+  			color: var(--charcoal-blue);
+  		}
+
+  		.story_line {
+  			/*This is to have a separator between stories*/
+  			border-bottom: 1px solid var(--charcoal-blue);
   		}
 
   	</style>
@@ -140,18 +160,28 @@
 			</div>
 		</div>
 
-		<div class="row">
+		<div class="row story_line">
 			<!--This row should have three columns. The middle column will remain the same while the two outer columns will have two nested rows.-->
 			<!--Two nested rows.-->
 			<div class="col">
-				<div class="row">
+				<div class="row story_line">
+					<!--This is the first story. It is a live update on Dallas welcoming the month of March by wearing his March bowtie.-->
 					<p class="urgent">LIVE 11m ago</p>
 					<h3 class="story_title">Dallas is Welcoming March in a Dapper Fashion</h3>
 					<p class="story">Dallas is featuring his March bowtie that is covered in clovers, Leprechaun hats, and other fun March symbols!</p>
 					<p class="update">See more updates ></p>
 				</div>
 				<div class="row">
-					Second
+					<!--This is the second story. It is a funny advice story of Dallas teaching other dogs how to perfect puppy dog eyes.-->
+					<h3 class="story_title">Practicing Puppy Dog Eyes</h3>
+					<!--I wasn't sure how to get this in a format I wanted using css, so I decided to split this part of the row into two columns-->
+					<div class="col">
+						<img src="../images/puppy_eyes.jpeg" class="story_image" alt="Picture of Dallas doing puppy eyes at the camera">
+					</div>
+					<div class="col">
+						<p class="story">Dallas shares tips and tricks on how to perfect the art of “puppy dog eyes”.</p>
+						<p class="read">5 min read</p>
+					</div>
 				</div>
 			</div>
 
@@ -166,11 +196,26 @@
 
 			<!--Two nested rows-->
 			<div class="col">
-				<div class="row">
-					Third
+				<div class="row story_line">
+					<!--This is story number three. It is breaking news on a spotting of Dallas after his spa day.-->
+					<p class="urgent">BREAKING NEWS</p>
+					<h3 class="story_title">Dallas Spotted After Spa Day</h3>
+					<!--After doing the second story, I knew I would need two columns for a picture so I did that here.-->
+					<!--This time, I put the image on the right half-->
+					<div class="col">
+						<p class="story">Dallas spotted today sporting a March themed bandanna after a trip to the Doggy Days Spa.</p>
+						<!--Include the updates thing-->
+						<p class="update">See more updates ></p>
+					</div>
+					<div class="col">
+						<img src="../images/spa.jpeg" class="story_image" alt="Picture of Dallas after a spa trip">
+					</div>
 				</div>
 				<div class="row">
-					Fourth
+					<!--This is the fourth story. In addition to cute stories about my dog, I wanted to include some stories about topics he would be intereseted in. This story is a funny comment on a decline in the amount of treats he is receiving.-->
+					<h3 class="story_title">Possible Decrease in Treat Receival</h3>
+					<p class="story">Has there been a decrease in treat receival? Dallas is investigating this issue on behalf of the neighborhood.</p>
+					<p class="read">10 min read</p>
 				</div>
 			</div>
 		</div>
