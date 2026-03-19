@@ -47,33 +47,42 @@
   		.col {
   			/*Add a border so I can see while setting up the layout*/
   			/*border: 1px solid black;*/
-  			padding: 10px;
+  			/*padding: 10px;*/
   		}
   		
   		.paw {
-  			width: 100px;
-  			height: 100px;
+  			/*width: 100px;
+  			height: 100px;*/
+  			/*Change from pixels to a percentage so size is responsive for the image*/
+  			width:60%;
   		}
 
   		.header {
-  			border-bottom: 2px solid var(--jet-black);
+  			border-bottom: 2px solid var(--charcoal-blue);
   		}
 
   		/*All of the margins were messing up the formatting so I removed them. I added a top margin to help with the spacing.*/
   		h1, h2, h3 {
+  			/*
   			margin: 0;
   			margin-top: 10px;
+  			*/
+  			/*Change the margin to be bootstrap inline*/
+  			/*I actually decided that I no longer wanted/needed the margin for this one after doing the padding for the columns.*/
   		}
 
   		h1, h2 {
   			/*Make the font bold so the title stands out*/
-  			font-weight: bold;
+  			/*Make more bootstrap*/
+  			/*font-weight: bold;*/
   		}
 
   		.main_picture {
   			/*Set width and height of main picture. I set it generally to start, and then made it so it matched the height of the two outer columns*/
-  			width: 350px;
-  			height: 450px;
+  			/*width: 350px;
+  			height: 450px;*/
+  			/*Change size to be resize friendly*/
+  			width: 100%;
   		}
 
   		/*This is the class for the breaking news and live stuff. I am making the text red.*/
@@ -85,13 +94,15 @@
   			text-align: left;
   			/*The auto bottom margin was way too big so I readjusted it to be only 5 pixels.*/
   			/*I realized that my top margin for the headings was not applying to my story titles. So I fixed that and now need to remove the bottom margin fully so there isn't too much space.*/
-  			margin-bottom: 0px;
+  			/*Change margin to be bootstrap friendly*/
+  			/*margin-bottom: 0px;*/
 
   		}
 
   		/*This is the styling for all of the story titles*/
   		.story_title {
-  			margin-top: 10px;
+  			/*Change margin to be more bootstrap*/
+  			/*margin-top: 10px;*/
   			font-weight: bold;
   			text-align: left;
   		}
@@ -102,13 +113,15 @@
   			/*I increased the font-size to make it more readable. The default font size was just too small.*/
   			font-size: 1.2rem;
   			/*There is a large botom margin so I readjusted to 5 pixels to match the LIVE tag*/
-  			margin-bottom: 5px;
+  			/*margin-bottom: 5px;*/
+  			/*I changed the margin to inline bootstrap format*/
   		}
 
   		/*This is the class for an image within a story*/
-  		.story_image {
-  			width: 200px;
-  		}
+  		/*.story_image {
+  			width: 100%;
+  		}*/
+  		/*Changed to be more boostrap friendly*/
 
   		/*This is the styling for the see more updates part*/
   		.update {
@@ -116,7 +129,8 @@
   			/*Align to the left*/
   			text-align: left;
   			/*Remove excessive margin*/
-  			margin: 0;
+  			/*Change margin to be bootstrap friendly*/
+  			/*margin: 0;*/
   		}
 
   		/*This is the styling for the time to read comments below the stories*/
@@ -141,20 +155,20 @@
 		<div class="row header">
 			<!--This will likely have three columns, but we'll see.-->
 			<!--It does in fact need three columns.-->
-			<div class="col col-2">
+			<div class="col col-2 p-3">
 				<!--I wanted cute paw prints on either side of the title.-->
 				<!--Source: freepik.com-->
 				<img class="paw" src="../images/paw.png" alt="Paw print">
 			</div>
 			
-			<div class="col">
+			<div class="col p-3">
 				<!--Here is the title for my paper-->
-				<h1>The Dallas Review</h1>
+				<h1 class="fw-bold">The Dallas Review</h1>
 				<!--This is empty because I wanted the date to change every day.-->
-				<h3 class="today"></h3>
+				<h2 class="today h3"></h2>
 			</div>
 
-			<div class="col col-2">
+			<div class="col col-2 p-3">
 				<!--The other paw print-->
 				<!--Source: freepik.com-->
 				<img class="paw" src="../images/paw.png" alt="Paw print">
@@ -164,62 +178,62 @@
 		<div class="row story_line">
 			<!--This row should have three columns. The middle column will remain the same while the two outer columns will have two nested rows.-->
 			<!--Two nested rows.-->
-			<div class="col">
+			<div class="col p-3">
 				<div class="row story_line">
 					<!--This is the first story. It is a live update on Dallas welcoming the month of March by wearing his March bowtie.-->
-					<p class="urgent">LIVE 11m ago</p>
-					<h3 class="story_title">Dallas is Welcoming March in a Dapper Fashion</h3>
-					<p class="story">Dallas is featuring his March bowtie that is covered in clovers, Leprechaun hats, and other fun March symbols!</p>
-					<p class="update">See more updates ></p>
+					<p class="urgent mb-0 p-1">LIVE 11m ago</p>
+					<h3 class="story_title mb-0 p-1">Dallas is Welcoming March in a Dapper Fashion</h3>
+					<p class="story mb-0 p-1">Dallas is featuring his March bowtie that is covered in clovers, Leprechaun hats, and other fun March symbols!</p>
+					<p class="update mb-0 p-1">See more updates ></p>
 				</div>
 				<div class="row">
 					<!--This is the second story. It is a funny advice story of Dallas teaching other dogs how to perfect puppy dog eyes.-->
-					<h3 class="story_title">Practicing Puppy Dog Eyes</h3>
+					<h3 class="story_title mb-0 p-1">Practicing Puppy Dog Eyes</h3>
 					<!--I wasn't sure how to get this in a format I wanted using css, so I decided to split this part of the row into two columns-->
-					<div class="col">
-						<img src="../images/puppy_eyes.jpeg" class="story_image" alt="Picture of Dallas doing puppy eyes at the camera">
+					<div class="col p-1">
+						<img src="../images/puppy_eyes.jpeg" class="img-fluid" alt="Picture of Dallas doing puppy eyes at the camera">
 					</div>
 					<!--The content for the story-->
-					<div class="col">
-						<p class="story">Dallas shares tips and tricks on how to perfect the art of “puppy dog eyes”.</p>
-						<p class="read">5 min read</p>
+					<div class="col p-1">
+						<p class="story mb-0 p-1">Dallas shares tips and tricks on how to perfect the art of “puppy dog eyes”.</p>
+						<p class="read mb-0 p-1">5 min read</p>
 					</div>
 				</div>
 			</div>
 
 			<!--No nesting-->
 			<!--I am decided to start with this column for this row section because I think it will require the most arranging.-->
-			<div class="col">
+			<div class="col p-3">
 				<!--Cute picture of my dog in a bowtie!-->
-				<img class="main_picture" src="../images/march.jpg" alt="A beagle wearing a St. Patrick's themed bowtie">
+				<img class="img-fluid" src="../images/march.jpg" alt="A beagle wearing a St. Patrick's themed bowtie">
 				<!--This is just a quick little title for the image. Kind of like a feature image in the newspaper. I also thought it would be funny to have a play on march madness.-->
-				<h2>March Bowtie Madness!</h2>
+				<h2 class="p-1">March Bowtie Madness!</h2>
 			</div>
 
 			<!--Two nested rows-->
-			<div class="col">
+			<div class="col p-3">
 				<div class="row story_line">
 					<!--This is story number three. It is breaking news on a spotting of Dallas after his spa day.-->
-					<p class="urgent">BREAKING NEWS</p>
-					<h3 class="story_title">Dallas Spotted After Spa Day</h3>
+					<p class="urgent mb-0 p-1">BREAKING NEWS</p>
+					<h3 class="story_title mb-0 p-1">Dallas Spotted After Spa Day</h3>
 					<!--After doing the second story, I knew I would need two columns for a picture so I did that here.-->
 					<!--This time, I put the image on the right half-->
-					<div class="col">
-						<p class="story">Dallas spotted today sporting a March themed bandanna after a trip to the Doggy Days Spa.</p>
+					<div class="col p-1">
+						<p class="story mb-0 p-1">Dallas spotted today sporting a March themed bandanna after a trip to the Doggy Days Spa.</p>
 						<!--Include the updates thing-->
-						<p class="update">See more updates ></p>
+						<p class="update mb-0 p-1">See more updates ></p>
 					</div>
 
-					<div class="col">
-						<img src="../images/spa.jpeg" class="story_image" alt="Picture of Dallas after a spa trip">
+					<div class="col p-1">
+						<img src="../images/spa.jpeg" class="img-fluid" alt="Picture of Dallas after a spa trip">
 					</div>
 				</div>
 
 				<div class="row">
 					<!--This is the fourth story. In addition to cute stories about my dog, I wanted to include some stories about topics he would be intereseted in. This story is a funny comment on a decline in the amount of treats he is receiving.-->
-					<h3 class="story_title">Possible Decrease in Treat Receival</h3>
-					<p class="story">Has there been a decrease in treat receival? Dallas is investigating this issue on behalf of the neighborhood.</p>
-					<p class="read">10 min read</p>
+					<h3 class="story_title mb-0 p-1">Possible Decrease in Treat Receival</h3>
+					<p class="story mb-0 p-1">Has there been a decrease in treat receival? Dallas is investigating this issue on behalf of the neighborhood.</p>
+					<p class="read mb-0 p-1">10 min read</p>
 				</div>
 			</div>
 		</div>
@@ -227,21 +241,21 @@
 		<!--This chunk will have three columns.-->
 		<div class="row story_line">
 			<!--This story is a funny play on those law commercials for lawsuit compensation.-->
-			<div class="col">
-				<h3 class="story_title">Left at Home for Long Periods of Time?</h3>
-				<p class="story">You may be qualified to receive compensation.</p>
+			<div class="col p-3">
+				<h3 class="story_title mb-0 p-1">Left at Home for Long Periods of Time?</h3>
+				<p class="story mb-0 p-1">You may be qualified to receive compensation.</p>
 			</div>
 
 			<!--This story is a fun update on Dallas and his birthday that is coming up soon! I really just wanted a whole paper focused on my dog. He is my favorite source for good news.-->
-			<div class="col">
-				<h3 class="story_title">Dallas Turns 9 in April</h3>
-				<p class="story">Stay up-to-date on The Dallas Review to receive party details!</p>
+			<div class="col p-3">
+				<h3 class="story_title mb-0 p-1">Dallas Turns 9 in April</h3>
+				<p class="story mb-0 p-1">Stay up-to-date on The Dallas Review to receive party details!</p>
 			</div>
 
 			<!--This story is a look into Dallas and his daily routine. Spoiler, it's 90% sleeping.-->
-			<div class="col">
-				<h3 class="story_title">Dallas Suggests Daily Habits</h3>
-				<p class="story">Sleeping, eating, walking, and more sleeping! Dallas shares a day in the life and gives advice on living your best doggy life!</p>
+			<div class="col p-3">
+				<h3 class="story_title mb-0 p-1">Dallas Suggests Daily Habits</h3>
+				<p class="story mb-0 p-1">Sleeping, eating, walking, and more sleeping! Dallas shares a day in the life and gives advice on living your best doggy life!</p>
 			</div>
 		</div>
 
@@ -249,7 +263,7 @@
 		<div class="row">
 			<!--I just wanted to have a quick little copyright at the bottom after seeing a similar thing in the critical web design github.-->
 			<!--This source has been so helpful for using symbols in html: https://www.w3schools.com/html/html_symbols.asp-->
-			<p>&copy The Dallas Review 2026</p>
+			<p>&copy; The Dallas Review 2026</p>
 		</div>
 	</div>
 	
