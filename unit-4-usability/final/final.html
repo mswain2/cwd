@@ -10,11 +10,116 @@
 
 	-->
 	<title>Usability Test Report</title>
+
+	<!--Import a font I liked from Google Fonts-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&display=swap" rel="stylesheet">
+
+	<style>
+		* {
+  			/*Set page font to Josefin Slab to match mockup*/
+  			font-family: "Domine", serif;
+  		}
+
+		.row {
+  			/*Add a border so I can see while setting up the layout*/
+  			border: 1px solid black;
+  		}
+
+  		.col {
+  			/*Add a border so I can see while setting up the layout*/
+  			border: 1px solid black;
+  		}
+
+  		.img {
+  			/*Set width of images to 100% to fit their entire column/row and not take up the entire page.*/
+  			width: 100%;
+  		}
+  		
+  		.pinterest {
+  			/*Set width of the pinterest symbol to 30% to be an appropriate size for the header bar*/
+  			width: 30%;
+  			height: 100%;
+  		}
+	</style>
 	
   	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
   	
 </head>
 <body>
+
+	<div class="container text-center">
+		<div class="row">
+			<!--Create a big title to explain what the website is.-->
+			<div class="col col-3">
+				<img src="images/pinterest.png" class="pinterest" alt="The red pinterest symbol">
+			</div>
+			<div class="col col-6">
+				<h1 class="p-3">Pinterest Usability Test</h1>
+			</div>
+			<div class="col col-3">
+				<img src="images/pinterest.png" class="pinterest" alt="The red pinterest symobl">
+			</div>
+			<!--I decided to include a description of what the website contained and what the project did as a whole.-->
+			<p class="text-start">This website contains the results of  a usability test conducted on Pinterest. Tasks were developed by the group and verified before testing. The usability test was conducted by giving the tasks to a participant and evaluating their time, accuracy, and emotions while completing the task. They were then walked through the SUS Test.</p>
+		</div>
+		<div class="row">
+			<div class="col col-8">
+				<!--I wanted a header for the tasks section so I included it. I decided to make everything left-aligned because I thought that looked the best when doing my Figma mockup.-->
+				<h2 class="text-start">Tasks</h2>
+				<div class="row">
+					<!--List the first task. I decided to bold it because I wanted it to be more prominent. I tried an h3 tag but I didn't like it.-->
+					<p class="text-start fw-bold">1. Create a public Pinterest board called “Beagle Board”</p>
+					<div class="col">
+						<!--Include the image I screenshot for the board creation.-->
+						<img src="images/createBoard.png" class="img" alt="Option to create a board on Pinterest">
+					</div>
+					<div class="col text-start">
+						<!--I decided to italicize this to create emphasis without reusing the bold I used for the task.-->
+						<p class="fst-italic">22 seconds to complete</p>
+						<p>The user quickly found the create option on the left sidebar. Upon clicking the create option, the found the board creation nested within. The user was satisfied and noted the task was easy.</p>
+					</div>
+				</div>
+
+				<div class="row">
+					<!--List the first task. I decided to bold it because I wanted it to be more prominent. I tried an h3 tag but I didn't like it.-->
+					<p class="text-start fw-bold">2. Change the privacy settings of the Beagle Board to be a private board.</p>
+					<div class="col">
+						<!--Include the image I screenshot for the board creation.-->
+						<img src="images/editBoard.png" class="img" alt="Option to edit a board on Pinterest">
+					</div>
+					<div class="col text-start">
+						<!--I decided to italicize this to create emphasis without reusing the bold I used for the task.-->
+						<p class="fst-italic">10 seconds to complete</p>
+						<p>After creating a board, the user was already on the board page. They noticed the kebab options in the top left and chose it. There was an option within that to edit which is what the user chose. This displayed what is shown in the image to the left. The user did not notice the secret board option at first, but noticed it quickly and made the edit. The user noted that the task was easy.</p>
+					</div>
+				</div>
+
+				<div class="row">
+					<!--List the first task. I decided to bold it because I wanted it to be more prominent. I tried an h3 tag but I didn't like it.-->
+					<p class="text-start fw-bold">3. Search for beagle pictures on Pinterest and save some to the Beagle Pinterest Board.</p>
+					<div class="col">
+						<!--Include the image I screenshot for the board creation.-->
+						<img src="images/search.png" class="img" alt="The search bar on Pinterest">
+						<img src="images/pin.png" class="img" alt="A pin of a beagle">
+						<img src="images/ideas.png" class="img" alt="The page of More Options for the Beagle Board">
+					</div>
+					<div class="col text-start">
+						<!--I decided to italicize this to create emphasis without reusing the bold I used for the task.-->
+						<p class="fst-italic">1 minute 50 seconds to complete</p>
+						<p>The user quickly located the search bar at the top of the page. They noticed that the search bar within the board was for their pins only. They navigated back to the home page and used that search bar to successfully find pictures of beagles. When it came to saving the pictures, the user had more trouble. The user found love and unlove after clicking multiple options. Once the user located the save button, they were unable to specify which board to save the pin to. The user saved pins to their profile and then navigated to their profile where they had to edit each pin to change its location. The user then discovered the More Ideas page for the specific board and found it easier to add pins from there. The user noted that they were frustrated and annoyed.</p>
+					</div>
+				</div>
+
+
+
+			</div>
+			<div class="col">
+				<h2 class="text-start">SUS Test</h2>
+			</div>
+		</div>
+	</div>
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
