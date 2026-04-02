@@ -6,7 +6,8 @@
 
 	<!-- 
 	About this page:
-
+	I started this page by creating a mockup on Figma to figure out how I wanted the format to look. After I did that, I came to Sublime and created the base layout using columns and rows with black outlines. I then started filling everything in. I liked the mockup I did with the tasks on the left side with their respective tasks, times, descriptions, and images. I put the SUS test on the right side. When the screen gets small enough, the SUS test moves to the bottom. I did a lot of responsive stuff with the pinterest symbols in the top header and the columns. After I got all of the tasks done, I removed the borders that I was using solely for format and realized I liked the separation that they gave. I went in and added borders to different parts of rows and columns to bring that separation back in. I then got started on the SUS test. I decided to include a note that the prefilled items in the form were from the usability test done in class. I also included a small instruction of how the number system worked. I then copied all of the questions over as inputs and set the placeholder for those to the values from our specific usability study. I created the submit button using the example posted from class. I also created a way to display the final score, but I am not sure it will work as of right now. It did actually end up working. I just had to move it within the form to be able to access the final_score field from within the javascript. Overall, I think this page turned out really well! I like how it looks and how the SUS test interactive stuff turned out.
+	I used the bootstrap pages for help: https://getbootstrap.com/docs/
 
 	-->
 	<title>Usability Test Report</title>
@@ -18,18 +19,18 @@
 
 	<style>
 		* {
-  			/*Set page font to Josefin Slab to match mockup*/
+  			/*Set page font to Domine because I liked this font*/
   			font-family: "Domine", serif;
   		}
 
 		.row {
   			/*Add a border so I can see while setting up the layout*/
-  			border: 1px solid black;
+  			/*border: 1px solid black;*/
   		}
 
   		.col {
   			/*Add a border so I can see while setting up the layout*/
-  			border: 1px solid black;
+  			/*border: 1px solid black;*/
   		}
 
   		.img {
@@ -46,8 +47,9 @@
 <body>
 
 	<div class="container text-center">
-		<div class="row">
+		<div class="row border-bottom">
 			<!--Create a big title to explain what the website is.-->
+			<!--I also decided to include the pinterest symbol on either side. These columns change based on the screen size and the symbol is aligned to the center of the column to help with the appearance when the screen gets smaller.-->
 			<div class="col col-3.5 col-md-3 d-flex align-items-center justify-content-center">
 				<img src="images/pinterest.png" class="pinterest w-25" alt="The red pinterest symbol">
 			</div>
@@ -60,11 +62,11 @@
 			<!--I decided to include a description of what the website contained and what the project did as a whole.-->
 			<p class="text-start">This website contains the results of  a usability test conducted on Pinterest. Tasks were developed by the group and verified before testing. The usability test was conducted by giving the tasks to a participant and evaluating their time, accuracy, and emotions while completing the task. They were then walked through the SUS Test.</p>
 		</div>
-		<div class="row">
-			<div class="col col-8">
+		<div class="row py-1">
+			<div class="col col-12 col-md-8 border-end">
 				<!--I wanted a header for the tasks section so I included it. I decided to make everything left-aligned because I thought that looked the best when doing my Figma mockup.-->
 				<h2 class="text-start">Tasks</h2>
-				<div class="row">
+				<div class="row border-bottom py-2">
 					<!--List the first task. I decided to bold it because I wanted it to be more prominent. I tried an h3 tag but I didn't like it.-->
 					<p class="text-start fw-bold">1. Create a public Pinterest board called “Beagle Board”</p>
 					<div class="col">
@@ -78,7 +80,7 @@
 					</div>
 				</div>
 
-				<div class="row">
+				<div class="row border-bottom py-2">
 					<!--List the second task. I decided to bold it because I wanted it to be more prominent. I tried an h3 tag but I didn't like it.-->
 					<p class="text-start fw-bold">2. Change the privacy settings of the Beagle Board to be a private board.</p>
 					<div class="col">
@@ -92,7 +94,7 @@
 					</div>
 				</div>
 
-				<div class="row">
+				<div class="row border-bottom py-2">
 					<!--List the third task. I decided to bold it because I wanted it to be more prominent. I tried an h3 tag but I didn't like it.-->
 					<p class="text-start fw-bold">3. Search for beagle pictures on Pinterest and save some to the Beagle Pinterest Board.</p>
 					<div class="col">
@@ -111,7 +113,7 @@
 					</div>
 				</div>
 
-				<div class="row">
+				<div class="row border-bottom py-2">
 					<!--List the fourth task. I decided to bold it because I wanted it to be more prominent. I tried an h3 tag but I didn't like it.-->
 					<p class="text-start fw-bold">4. Search for a beagle board and follow that board.</p>
 					<div class="col">
@@ -126,7 +128,7 @@
 					</div>
 				</div>
 
-				<div class="row">
+				<div class="row py-2">
 					<!--List the final task. I decided to bold it because I wanted it to be more prominent. I tried an h3 tag but I didn't like it.-->
 					<p class="text-start fw-bold">5. Create a collage using pictures from the Beagle board.</p>
 					<div class="col">
@@ -141,12 +143,126 @@
 				</div>
 
 			</div>
-			<div class="col">
+			<div class="col col-12 col-md-4">
+				<!--Create a header for the SUS test results-->
 				<h2 class="text-start">SUS Test</h2>
+				<!--I decided to include a little disclaimer about the prefilled values for the form. I used italics as a small emphasis. I also removed the margins because they were too much.-->
+				<p class="fst-italic my-0">This form is prefilled with the results from the usability test detailed on this website.</p>
+				<!--I decided to include a little instructions section in bold so users would see it and understand how to fill out the SUS test inputs.-->
+				<p class="fw-bold">Enter a number 1 to 5 where 1 indicates "Strongly Disagree" and 5 indicates "Strongly Agree".</p>
+
+				<!--Make the form for the sus test.-->
+				<form action="#" id="SUSform">
+					<!--I decided to use rows and columns to keep the inputs and labels on the same line. I also decided to give the majority of the space to the label and not the small number indicator.-->
+					<div class="row border-bottom">
+						<div class="col col-3">
+							<input type="number" value="3" name="q1" id="q1" min="1" max="5" required>
+						</div>
+						<div class="col">
+	                    	<label for="q1">I think that I would like to use this system frequently.</label>
+	                    </div>
+	                </div>
+	                <!--I decided to include separators for these too.-->
+	                <div class="row border-bottom py-2">
+						<div class="col col-3">
+							<input type="number" value="4" name="q2" id="q2" min="1" max="5" required>
+						</div>
+						<div class="col">
+	                    	<label for="q2">I found the system unnecessarily complex.</label>
+	                    </div>
+	                </div>
+
+	                <div class="row border-bottom py-2">
+						<div class="col col-3">
+							<input type="number" value="3" name="q3" id="q3" min="1" max="5" required>
+						</div>
+						<div class="col">
+	                    	<label for="q3">I thought the system was easy to use. </label>
+	                    </div>
+	                </div>
+	                <!--I am now just copying the questions over from the sus test website: https://measuringu.com/sus/. I am also copying the values from our usability test to the value.-->
+	                <div class="row border-bottom py-2">
+						<div class="col col-3">
+							<input type="number" value="1" name="q4" id="q4" min="1" max="5" required>
+						</div>
+						<div class="col">
+	                    	<label for="q4">I think that I would need the support of a technical person to be able to use this system.</label>
+	                    </div>
+	                </div>
+
+	                <div class="row border-bottom py-2">
+						<div class="col col-3">
+							<input type="number" value="2" name="q5" id="q5" min="1" max="5" required>
+						</div>
+						<div class="col">
+	                    	<label for="q5">I found the various functions in this system were well integrated.</label>
+	                    </div>
+	                </div>
+
+	                <div class="row border-bottom py-2">
+						<div class="col col-3">
+							<input type="number" value="4" name="q6" id="q6" min="1" max="5" required>
+						</div>
+						<div class="col">
+	                    	<label for="q6">I thought there was too much inconsistency in this system.</label>
+	                    </div>
+	                </div>
+
+					<div class="row border-bottom py-2">
+						<div class="col col-3">
+							<input type="number" value="3" name="q7" id="q7" min="1" max="5" required>
+						</div>
+						<div class="col">
+	                    	<label for="q7">I would imagine that most people would learn to use this system very quickly.</label>
+	                    </div>
+	                </div>
+
+	                <div class="row border-bottom py-2">
+						<div class="col col-3">
+							<input type="number" value="4" name="q8" id="q8" min="1" max="5" required>
+						</div>
+						<div class="col">
+	                    	<label for="q8">I found the system very cumbersome to use.</label>
+	                    </div>
+	                </div>
+
+	                <div class="row border-bottom py-2">
+						<div class="col col-3">
+							<input type="number" value="3" name="q9" id="q9" min="1" max="5" required>
+						</div>
+						<div class="col">
+	                    	<label for="q9">I felt very confident using the system.</label>
+	                    </div>
+	                </div>
+
+	                <div class="row border-bottom py-2">
+						<div class="col col-3">
+							<input type="number" value="2" name="q10" id="q10" min="1" max="5" required>
+						</div>
+						<div class="col">
+	                    	<label for="q10">I needed to learn a lot of things before I could get going with this system.</label>
+	                    </div>
+	                </div>
+
+					<button type="submit" class="py-2 rounded my-2">Submit</button>
+					<!--This is the display for the final score. It is empty at the beginning, but when the user selects submit, the score is replaced with the calculated score.-->
+					<div class="row py-4">
+						<div class="col">
+							<p class="fw-bold">Final Score: </p>
+						</div>
+						<div class="col">
+	                    	<p id="final_score"></p>
+	                    </div>
+	            	</div>
+				</form>
+
+				<!--Display the final score. I'm not sure this will work.-->
+				<!--The final score was originally here, but I moved it within the form tag to get it to work.-->
 			</div>
 		</div>
 	</div>
 
+	<script src="assets/sus.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
