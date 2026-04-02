@@ -35,13 +35,9 @@
   		.img {
   			/*Set width of images to 100% to fit their entire column/row and not take up the entire page.*/
   			width: 100%;
+  			vertical-align: middle;
   		}
   		
-  		.pinterest {
-  			/*Set width of the pinterest symbol to 30% to be an appropriate size for the header bar*/
-  			width: 30%;
-  			height: 100%;
-  		}
 	</style>
 	
   	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -52,14 +48,14 @@
 	<div class="container text-center">
 		<div class="row">
 			<!--Create a big title to explain what the website is.-->
-			<div class="col col-3">
-				<img src="images/pinterest.png" class="pinterest" alt="The red pinterest symbol">
+			<div class="col col-3.5 col-md-3 d-flex align-items-center justify-content-center">
+				<img src="images/pinterest.png" class="pinterest w-25" alt="The red pinterest symbol">
 			</div>
-			<div class="col col-6">
-				<h1 class="p-3">Pinterest Usability Test</h1>
+			<div class="col col-5 col-md-6 p-0">
+				<h1 class="py-3">Pinterest Usability Test</h1>
 			</div>
-			<div class="col col-3">
-				<img src="images/pinterest.png" class="pinterest" alt="The red pinterest symobl">
+			<div class="col col-3.5 col-md-3 d-flex align-items-center justify-content-center">
+				<img src="images/pinterest.png" class="pinterest w-25" alt="The red pinterest symbol">
 			</div>
 			<!--I decided to include a description of what the website contained and what the project did as a whole.-->
 			<p class="text-start">This website contains the results of  a usability test conducted on Pinterest. Tasks were developed by the group and verified before testing. The usability test was conducted by giving the tasks to a participant and evaluating their time, accuracy, and emotions while completing the task. They were then walked through the SUS Test.</p>
@@ -78,15 +74,15 @@
 					<div class="col text-start">
 						<!--I decided to italicize this to create emphasis without reusing the bold I used for the task.-->
 						<p class="fst-italic">22 seconds to complete</p>
-						<p>The user quickly found the create option on the left sidebar. Upon clicking the create option, the found the board creation nested within. The user was satisfied and noted the task was easy.</p>
+						<p>The user quickly found the create option on the left sidebar. Upon clicking the create option, the found the board creation nested within, shown in the image to the left. The user quickly filled out the form and created the board. The user was satisfied and noted the task was easy.</p>
 					</div>
 				</div>
 
 				<div class="row">
-					<!--List the first task. I decided to bold it because I wanted it to be more prominent. I tried an h3 tag but I didn't like it.-->
+					<!--List the second task. I decided to bold it because I wanted it to be more prominent. I tried an h3 tag but I didn't like it.-->
 					<p class="text-start fw-bold">2. Change the privacy settings of the Beagle Board to be a private board.</p>
 					<div class="col">
-						<!--Include the image I screenshot for the board creation.-->
+						<!--Include the image I screenshot for the board editing form.-->
 						<img src="images/editBoard.png" class="img" alt="Option to edit a board on Pinterest">
 					</div>
 					<div class="col text-start">
@@ -97,22 +93,52 @@
 				</div>
 
 				<div class="row">
-					<!--List the first task. I decided to bold it because I wanted it to be more prominent. I tried an h3 tag but I didn't like it.-->
+					<!--List the third task. I decided to bold it because I wanted it to be more prominent. I tried an h3 tag but I didn't like it.-->
 					<p class="text-start fw-bold">3. Search for beagle pictures on Pinterest and save some to the Beagle Pinterest Board.</p>
 					<div class="col">
-						<!--Include the image I screenshot for the board creation.-->
+						<!--Include the screenshots. I decided to use three because the user navigated to quite a few places during this task.-->
+						<!--This imagae is to show the search bar.-->
 						<img src="images/search.png" class="img" alt="The search bar on Pinterest">
+						<!--This image is to show a specific pin with the options. The user became confused with this page due to the dropdown next to the save button so I wanted to highlight this part.-->
 						<img src="images/pin.png" class="img" alt="A pin of a beagle">
+						<!--This is an image of the more options area for the beagle board. The user stumbled across this page, but found it way easier than searching for and saving pins.-->
 						<img src="images/ideas.png" class="img" alt="The page of More Options for the Beagle Board">
 					</div>
 					<div class="col text-start">
 						<!--I decided to italicize this to create emphasis without reusing the bold I used for the task.-->
 						<p class="fst-italic">1 minute 50 seconds to complete</p>
-						<p>The user quickly located the search bar at the top of the page. They noticed that the search bar within the board was for their pins only. They navigated back to the home page and used that search bar to successfully find pictures of beagles. When it came to saving the pictures, the user had more trouble. The user found love and unlove after clicking multiple options. Once the user located the save button, they were unable to specify which board to save the pin to. The user saved pins to their profile and then navigated to their profile where they had to edit each pin to change its location. The user then discovered the More Ideas page for the specific board and found it easier to add pins from there. The user noted that they were frustrated and annoyed.</p>
+						<p>The user quickly located the search bar at the top of the page. They noticed that the search bar within the board was for their pins only. They navigated back to the home page and used that search bar, shown in the top image, to successfully find pictures of beagles. When it came to saving the pictures, the user had more trouble. The user found love and unlove after clicking multiple options. Once the user located the save button, shown in the middle image, they were unable to specify which board to save the pin to. The user saved pins to their profile and then navigated to their profile where they had to edit each pin to change its location. The user then discovered the More Ideas page, shown in the bottom image, for the specific board and found it easier to add pins from there. The user noted that they were frustrated and annoyed.</p>
 					</div>
 				</div>
 
+				<div class="row">
+					<!--List the fourth task. I decided to bold it because I wanted it to be more prominent. I tried an h3 tag but I didn't like it.-->
+					<p class="text-start fw-bold">4. Search for a beagle board and follow that board.</p>
+					<div class="col">
+						<!--Include the images I screenshot. I decided to include two images for this one. The first is to display the search options. The user had to filter which was an extra step I wanted to display. The second shows the options for following after a user has selected a board.-->
+						<img src="images/board.png" class="img" alt="The filtered search results for beagle boards">
+						<img src="images/follow.png" class="img" alt="A beagle board on Pinterest with options to follow">
+					</div>
+					<div class="col text-start">
+						<!--I decided to italicize this to create emphasis without reusing the bold I used for the task.-->
+						<p class="fst-italic">45 seconds to complete</p>
+						<p>The user quickly relocated the search bar and executed the search for beagles. They were initially confused because only individual pictures were popping up. They managed to find the filter on the top left and chose to filter only for boards, shown in the top image. The user then selected a board. They chose the ... menu and found the option to follow the board from there, shown in the bottom image. The user had no real comments on this task. There was a slight note of confusion with searching before they found the filter option.</p>
+					</div>
+				</div>
 
+				<div class="row">
+					<!--List the final task. I decided to bold it because I wanted it to be more prominent. I tried an h3 tag but I didn't like it.-->
+					<p class="text-start fw-bold">5. Create a collage using pictures from the Beagle board.</p>
+					<div class="col">
+						<!--Include the images I screenshot. I only used one image for this. I decided to include the actual collage creation area. This is where a lot of confusion came in because of how much is offered.-->
+						<img src="images/collage.png" class="img" alt="The collage creation area">
+					</div>
+					<div class="col text-start">
+						<!--I decided to italicize this to create emphasis without reusing the bold I used for the task.-->
+						<p class="fst-italic">4 minutes to complete</p>
+						<p>The user noted some nervousness at the thought of completing this task. The user quickly found the create option again and the collage option within. The user noted a lot of confusion and nervousness once within the collage creation, shown in the image to the left. The user found the option to use pictures from the beagle board on the right and began putting pictures in. The user also wanted to use pictures from the board they followed and noted they were unable to find it. The collage builder automatically did a cutout for one of the images which shocked the user. Once the user discovered this option, they had a lot of fun with the cutouts and expressed happiness. The user also found the option to draw on the collage and drew a beagle. The user then saved the collage. The user noted many emotions throughout the task starting with nervousness and confusion and ending with happiness and shock. </p>
+					</div>
+				</div>
 
 			</div>
 			<div class="col">
