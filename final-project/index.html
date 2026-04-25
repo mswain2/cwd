@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+  		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+		<!-- 
+		About this page:
+		(add an explanation here)
+
+		-->
+
+		<title>Apple Music Analysis</title>
+		<style>
+			html {
+				/*Make the background the dark apple music color*/
+				background-color: #FF4E6B;
+			}
+
+			main {
+				/*Make the background the dark apple music color*/
+				background-color: #FF4E6B;
+			}
+
+			.container {
+				/*Make the background of the container a lighter color for contrast*/
+				background-color: #FE91A3;
+				/*Set the text color to black for the best contrast. I used this website to check the contrast because I considered white at one point. https://webaim.org/resources/contrastchecker/ This website said white was bad contrast so I stuck with black.*/
+				color: black;
+				/*I added a margin so there was a gap around the lighter colored box to reflect my mockup better.*/
+				margin: 10px;
+				/*Set font family to a similar one to the Apple Music font. Roboto actually ended up being close to perfect.*/
+				font-family: "Roboto";
+			}
+
+			.row {
+	  			/*Add a border so I can see while setting up the layout*/
+	  			/*border: 1px solid black;*/
+	  		}
+
+	  		.col {
+	  			/*Add a border so I can see while setting up the layout*/
+	  			/*border: 1px solid black;*/
+	  		}
+
+		</style>
+
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+	</head>
+	<body>
+	<!--Create a main tag for accessibility purposes-->
+	<main>
+		<!--Create a container for the rows and columns-->
+		<div class="container">
+			<!--Create a row for the header-->
+			<div class="row">
+				<!--I center aligned the images and added some responsive code for when the screen size changes.-->
+				<div class="col col-3 col-md-2 d-flex align-items-center justify-content-center">
+					<!--This is the apple music logo. Here is the source: https://freepnglogo.com/images/all_img/apple-music-logo-png-e0aa.png-->
+					<img src="assets/apple-logo.png" class="apple w-50" alt="The apple music logo">
+				</div>
+
+				<!--This is the column for the main title of the page.-->
+				<div class="col">
+					<h1 class="py-3 text-center fs-1">Kenzie's Apple Music Analysis</h1>
+				</div>
+
+				<!--I center aligned the images and added some responsive code for when the screen size changes.-->
+				<div class="col col-3 col-md-2 d-flex align-items-center justify-content-center">
+					<!--This is the apple music logo. Here is the source: https://freepnglogo.com/images/all_img/apple-music-logo-png-e0aa.png-->
+					<img src="assets/apple-logo.png" class="apple w-50" alt="The apple music logo">
+				</div>
+
+			</div>
+
+			<div class="row">
+				<!--I included another row to just talk about what the website and my analysis was.-->
+				<h2 class="text-center fs-3">This is an analysis into how my listening trends have changed based on the year. There is also a comparison of how my total minutes listened changes based on the month.</h2>
+				<!--I also chose to add a quick blurb about the dataset I was using and where it came from. I wanted to include some details about what the dataset contained before hopping into the analysis.-->
+				<h3 class="text-center fs-4">This dataset spans from January 2022 - March 2026 and was extracted from my personal Apple Music statistics. The yearly statistics include the total listening minutes, total songs, and total artists. The monthly statistics include the total listening minutes.</h3>
+			</div>
+
+			<div class="row">
+				<!--This is the first statistic I analyzed. I wanted to see how the total minutes per year looked and see what kind of pattern there may be. I also went ahead and made this responsive for when the screen shrinks.-->
+				<div class="col col-12 col-md-6">
+					<p class="fs-3 fw-bold">Total Minutes Per Year</p>
+					<p class="fs-5">The first thing I wanted to look at was the total minutes per year. This gives a quick overview of how my listening has changed over the last 4 years. I chose the scatter chart because it shows the individual points really well as well as the increases and decreases.</p>
+				</div>
+				<!--This is the graph embed for total minutes per year. I also made this column responsive. I chose to add some padding around the embed because I thought it looked better and created more space.-->
+				<div class="col col-12 col-md-6">
+					<div class="flourish-embed flourish-scatter py-2" data-src="visualisation/28653453"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/28653453/thumbnail" width="100%" alt="scatter visualization" /></noscript></div>
+				</div>
+			</div>
+
+			<!--This was my analysis of the data and the graph. I wanted to include what I thought about the visualization and what I thought may have influenced different trends or patterns.-->
+			<div class="row">
+				<p class="fs-5">The value for 2026 is really low compared to the rest because there were only three months of data for this year. There was a steady increase occurring that capped in 2024 before slightly decreasing for 2025. It’s hard to say exactly what influenced this. I would say that the sharp increase from 2022 to 2023 is likely from me starting college. I had more time to listen to music and was likely more stressed meaning I would listen to more music. I think it is really interesting that 2025 was a decrease from 2024 because I was finishing out junior year and starting senior year in 2025. I would have expected 2025 to be higher. It will be interesting to see where 2026 falls on this graph once the year has finished.</p>
+			</div>
+
+			<!--The second statistic I looked at was total songs per year. This column was made responsive.-->
+			<div class="row">
+				<div class="col col-12 col-md-6">
+					<!--The title is a larger font size and bolded for emphasis.-->
+					<p class="fs-3 fw-bold">Total Songs Per Year</p>
+					<p class="fs-5">Another statistic provided by Apple Music is the total songs listened to per year. This gives an overview of how widespread my listening was for a certain year. I chose to use a lollipop chart because I think it’s a good variation of the bar chart to show the total songs per year. I also wanted to explore different visualizations for the numerous yearly statistics.</p>
+				</div>
+				<!--This is the embed for the flourish graph for total songs. I once again made this responsive and added padding for more space.-->
+				<div class="col col-12 col-md-6">
+					<div class="flourish-embed flourish-scatter py-2" data-src="visualisation/28653654"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/28653654/thumbnail" width="100%" alt="scatter visualization" /></noscript></div>
+				</div>
+			</div>
+
+			<div class="row">
+				<!--I wanted to include an analysis for every visualization I created. This one is a bit longer because I was shocked by the results shown in the graph.-->
+				<p class="fs-5">Once again, the value for 2026 is low due to a lack of data. This data is a bit more haphazard than the total listening minutes. There doesn’t appear to be a pattern of increases or decreases within the data I have. It makes sense that 2024 and 2025 have the highest values for this since they also had the highest values for total listening minutes. It appears that the more I listened to music, the more unique songs I had a chance to listen to. The value for 2022 is really shocking. I am not surprised that 2023 is lower than 2024 and 2025 since this once again reflects the values for total listening minutes. I am very surprised that, while 2023 had a drastically higher number of total listening minutes compared to 2022, 2023 actually had a lower number of total unique songs compared to 2022. It is a very small difference, but 2023 having such a lead on 2022 in listening minutes and being behind in total unique songs is really interesting. I’m not sure what would have caused this, but the deviation from the pattern is certainly intriguing. </p>
+			</div>
+
+			<div class="row">
+				<!--The third statistic I looked at was total artists per year. This column is responsive.-->
+				<div class="col col-12 col-md-6">
+					<!--Section title bolded and in a larger font for emphasis.-->
+					<p class="fs-3 fw-bold">Total Artists Per Year</p>
+					<p class="fs-5">Total artists per year also gives an indication to how unique my listening taste was during each year. A lot of artists indicates a variety of music. I chose to use a simple circles chart to show the total artists per year. The size of the circles reflects the number of unique albums.</p>
+				</div>
+				<!--This is the embed for the total artists visualization. I added padding again because I liked the extra space for the graphs.-->
+				<div class="col col-12 col-md-6">
+					<div class="flourish-embed flourish-hierarchy py-2" data-src="visualisation/28653739"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/28653739/thumbnail" width="100%" alt="hierarchy visualization" /></noscript></div>
+				</div>
+			</div>
+
+			<!--This was my analysis for the total artists. It once again shocked me, but aligned with the total songs indicating that there may be some significance to the findings.-->
+			<div class="row">
+				<p class="fs-5">2026 once again has a low/nonexistent value due to a lack of data. The data for total artists matches that of total songs. I am still quite shocked by the difference in value from total listening minutes. 2024 and 2025 are once again the highest and reflect the positions, highest and second highest respectively, that they held for total listening minutes and total songs. However, 2022 and 2023 are once again mismatched in my opinion. 2023 showed a sharp increase in listening minutes from 2022, but has lower total songs and total artists. It seems like while 2023 had a larger number of listening minutes, it had less diverse artists and albums and consisted of the same albums or songs. This would make sense due to my starting college in 2022/2023 and likely having more stress. Listening to the same songs would bring a sense of routine or comfort in a time of big changes.</p>
+			</div>
+
+			<!--This is the final section and the one I was most interested in looking at. These are non-responsive just because they are already in rows and appearing properly on mobiles.-->
+			<div class="row">
+				<!--Bolded larger title for emphasis on the section.-->
+				<p class="fs-3 fw-bold">Total Minutes Per Month</p>	
+			</div>
+
+			<!--This is the row for the flourish embed. I chose to give this graph specifically a row entirely to itself. Part of that is because it is a wider graph, but it is also because I was most interested in this data and wanted it to be more emphasized in the website.-->
+			<div class="row">
+				<div class="flourish-embed flourish-chart py-2" data-src="visualisation/28654003"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/28654003/thumbnail" width="100%" alt="chart visualization" /></noscript></div>
+			</div>
+
+			<!--This is the longest analysis section. I was just so interested in exploring the different trends across the months of different years and seeing whether there is a pattern. This was really fun and interesting to look at.-->
+			<div class="row">
+				<p class="fs-5">This is the statistic I was most interested in. The total listening minutes per month is more granular than any of the yearly statistics given by Apple Music. It can also show trends in how I listen to music based on the time of year or the environment I am in at that time. I decided to use a line chart to display this data with one line per year. I am interested to see if there are general trends across the year. </p>	
+				<p class="fs-5">It definitely looks like there are trends across years. There are spikes in listening typically in April and November which represent exam time for each semester. It appears my music listening increases during those times likely due to having it one while working on projects or studying. There are also dips during May and December where I am usually on break and relaxing or hanging out with family and friends. There are also smaller spikes in January and September indicating an increase in listening when I return to campus. As I stated earlier, I have more time to listen to music while at school. I also noticed a bit of a spike for July. This doesn’t make as much sense to me as the other spikes and dips do. Overall, most of the years tend to follow a similar pattern throughout the months. It’s really interesting to see this visual and make connections to things happening in my life at those times and what could be influencing different increases and decreases.</p>
+			</div>
+
+			<div class="row">
+				<!--I chose to include a Final Findings section just to recap and talk a little about how I felt about the visualizations and the findings.-->
+				<p class="fs-3 fw-bold">Final Findings</p>
+				<p class="fs-5">I had a really good time exploring this data. I’ve always been interested in how my music listening statistics look since I do spend a lot of time listening to music. It was really interesting to see some how some of the songs and albums statistics differed from the pattern shown in total listening minutes for the years. A large amount of listening minutes does not necessarily indicate a diverse listening library. </p>
+				<p class="fs-5"> I also loved seeing the patterns in my monthly listening. It is super interesting to see how changes in my life affect the way I listen to music. Sadly, Apple Music doesn’t have the statistics for total songs or albums per month, but that would also be really interesting to explore and see if there is a pattern with that data as well. I had a good time exploring different representations of data for the yearly statistics and analyzing all of the visualizations that resulted from this exploration.</p>
+			</div>
+
+		</div>
+	</main>
+
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+	</body>
+
+</html>
