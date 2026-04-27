@@ -5,7 +5,6 @@
 		<meta charset="utf-8">
   		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-
 		<!-- 
 		About this page:
 		For this project, I really wanted to use data visualizations to explore a topic I am really interested in. I chose to visualize and analyze my Apple Music Listening statistics. I wanted to see if I could identify any patterns in my listening. 
@@ -13,7 +12,7 @@
 		I wanted to align with accessibility standards so while doing my mockup I checked the contrast of my text colors. I wanted to use white because it fit in with the Apple Music logo better, but when I checked the contrast, it did not align. I chose to stick with black so my color contrast was better. I am also planning on running the final product through the accessibility checker we talked about in class.
 		The implementation of this project aligned really well with the original mockup. I didn't have to think much about the design while writing this code because I covered a lot of those choiced when designing the prototype. My main focus when actually coding the project was making sure my column alignment was good and implementing the responsiveness. Another focus was making sure my code fit in with the bootstrap standards of using the inline classes for styling. 
 		I really enjoyed this project overall. I had a really good time creating the visualizations and exploring the data. I also liked using this project to combine bootstrap coding and accessibility guidelines. It felt more purposeful in how I was addressing accessibility guidelines as I went. 
-		I ran my website through the WAVE report we talked about in class. I had one error where I had forgotten to specify the language in my html tag. I also had 9 alerts. 5 of them were from possible headings that I had labeled as p tags. I went ahead and changed them to be header tags for accessibility. 4 of the errors were from the noscript inclusions from the Flourish embeds. I wasn't really sure how to remedy these alerts. This was the message presented: "<noscript> cannot be used to provide an accessible version of inaccessible scripted content." 
+		I ran my website through the WAVE report we talked about in class. I had one error where I had forgotten to specify the language in my html tag. I also had 9 alerts. 5 of them were from possible headings that I had labeled as p tags. I went ahead and changed them to be header tags for accessibility. 4 of the errors were from the noscript inclusions from the Flourish embeds. I wasn't really sure how to remedy these alerts. This was the message presented: "<noscript> cannot be used to provide an accessible version of inaccessible scripted content." I tried a few different fixes suggested by the internet when I looked (adding an aria tag, adding an aria alert). These didn't get rid of the alert, so I think it is an issue with the noscript overall. I think that I've done everything I know of to make that area accessible, so I am going to leave it. The AIM Score for my website was a 9.9/10! I think I did a good job of making a nice website while ensuring it was accessible.
 
 		-->
 
@@ -56,7 +55,7 @@
 
 	</head>
 	<body>
-	<!--Create a main tag for accessibility purposes-->
+	<!--Create a main tag for accessibility purposes. I remembered this being an error on one of my previous websites when we looked at the WAVE report in class, so I added one for this page.-->
 	<main>
 		<!--Create a container for the rows and columns-->
 		<div class="container">
@@ -96,7 +95,7 @@
 				</div>
 				<!--This is the graph embed for total minutes per year. I also made this column responsive. I chose to add some padding around the embed because I thought it looked better and created more space.-->
 				<div class="col col-12 col-md-6">
-					<div class="flourish-embed flourish-scatter py-2" data-src="visualisation/28653453" aria-label="Profile picture of John Doe" role="img"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/28653453/thumbnail" width="100%" alt="scatter visualization" /></noscript></div>
+					<div class="flourish-embed flourish-scatter py-2" data-src="visualisation/28653453"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/28653453/thumbnail" width="100%" alt="scatter visualization" /></noscript></div>
 				</div>
 			</div>
 
@@ -141,7 +140,7 @@
 				<p class="fs-5">2026 once again has a low/nonexistent value due to a lack of data. The data for total artists matches that of total songs. I am still quite shocked by the difference in value from total listening minutes. 2024 and 2025 are once again the highest and reflect the positions, highest and second highest respectively, that they held for total listening minutes and total songs. However, 2022 and 2023 are once again mismatched in my opinion. 2023 showed a sharp increase in listening minutes from 2022, but has lower total songs and total artists. It seems like while 2023 had a larger number of listening minutes, it had less diverse artists and albums and consisted of the same albums or songs. This would make sense due to my starting college in 2022/2023 and likely having more stress. Listening to the same songs would bring a sense of routine or comfort in a time of big changes.</p>
 			</div>
 
-			<!--This is the final section and the one I was most interested in looking at. These are non-responsive just because they are already in rows and appearing properly on mobiles.-->
+			<!--This is the final section and the one I was most interested in looking at. These are non-responsive just because they are already in rows and appearing properly on smaller screens.-->
 			<div class="row">
 				<!--Bolded larger title for emphasis on the section.-->
 				<h4 class="fs-3 fw-bold">Total Minutes Per Month</h4>	
