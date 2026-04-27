@@ -13,6 +13,7 @@
 		I wanted to align with accessibility standards so while doing my mockup I checked the contrast of my text colors. I wanted to use white because it fit in with the Apple Music logo better, but when I checked the contrast, it did not align. I chose to stick with black so my color contrast was better. I am also planning on running the final product through the accessibility checker we talked about in class.
 		The implementation of this project aligned really well with the original mockup. I didn't have to think much about the design while writing this code because I covered a lot of those choiced when designing the prototype. My main focus when actually coding the project was making sure my column alignment was good and implementing the responsiveness. Another focus was making sure my code fit in with the bootstrap standards of using the inline classes for styling. 
 		I really enjoyed this project overall. I had a really good time creating the visualizations and exploring the data. I also liked using this project to combine bootstrap coding and accessibility guidelines. It felt more purposeful in how I was addressing accessibility guidelines as I went. 
+		I ran my website through the WAVE report we talked about in class. I had one error where I had forgotten to specify the language in my html tag. I also had 9 alerts. 5 of them were from possible headings that I had labeled as p tags. I went ahead and changed them to be header tags for accessibility. 4 of the errors were from the noscript inclusions from the Flourish embeds. 
 
 		-->
 
@@ -95,7 +96,7 @@
 				</div>
 				<!--This is the graph embed for total minutes per year. I also made this column responsive. I chose to add some padding around the embed because I thought it looked better and created more space.-->
 				<div class="col col-12 col-md-6">
-					<div class="flourish-embed flourish-scatter py-2" data-src="visualisation/28653453"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/28653453/thumbnail" width="100%" alt="scatter visualization" /></noscript></div>
+					<div class="flourish-embed flourish-scatter py-2" data-src="visualisation/28653453"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript aria-live="assertive"><img src="https://public.flourish.studio/visualisation/28653453/thumbnail" width="100%" alt="scatter visualization" /></noscript></div>
 				</div>
 			</div>
 
