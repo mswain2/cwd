@@ -1,5 +1,6 @@
 <!doctype html>
-<html>
+<!--I went back and added the lang attribute because I had forgotten. This was highlighed by the WAVE analysis.-->
+<html lang="en">
 	<head>
 		<meta charset="utf-8">
   		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,7 +8,11 @@
 
 		<!-- 
 		About this page:
-		(add an explanation here)
+		For this project, I really wanted to use data visualizations to explore a topic I am really interested in. I chose to visualize and analyze my Apple Music Listening statistics. I wanted to see if I could identify any patterns in my listening. 
+		A majority of my design decisions occurred when making the mockup for this project in Figma. I wanted to use the Apple Music colors to use more color in this project and emphasize the topic. I planned to use bootstrap so my mockup had a rows and columns set up. I also thought a lot about how big or emphasized I wanted my visualizations to be. I made the very last visualization have the most space. This is because I knew it would be a larger graph and I also wanted to emphasize the statistic I was most interested in.
+		I wanted to align with accessibility standards so while doing my mockup I checked the contrast of my text colors. I wanted to use white because it fit in with the Apple Music logo better, but when I checked the contrast, it did not align. I chose to stick with black so my color contrast was better. I am also planning on running the final product through the accessibility checker we talked about in class.
+		The implementation of this project aligned really well with the original mockup. I didn't have to think much about the design while writing this code because I covered a lot of those choiced when designing the prototype. My main focus when actually coding the project was making sure my column alignment was good and implementing the responsiveness. Another focus was making sure my code fit in with the bootstrap standards of using the inline classes for styling. 
+		I really enjoyed this project overall. I had a really good time creating the visualizations and exploring the data. I also liked using this project to combine bootstrap coding and accessibility guidelines. It felt more purposeful in how I was addressing accessibility guidelines as I went. 
 
 		-->
 
@@ -85,7 +90,7 @@
 			<div class="row">
 				<!--This is the first statistic I analyzed. I wanted to see how the total minutes per year looked and see what kind of pattern there may be. I also went ahead and made this responsive for when the screen shrinks.-->
 				<div class="col col-12 col-md-6">
-					<p class="fs-3 fw-bold">Total Minutes Per Year</p>
+					<h4 class="fs-3 fw-bold">Total Minutes Per Year</h4>
 					<p class="fs-5">The first thing I wanted to look at was the total minutes per year. This gives a quick overview of how my listening has changed over the last 4 years. I chose the scatter chart because it shows the individual points really well as well as the increases and decreases.</p>
 				</div>
 				<!--This is the graph embed for total minutes per year. I also made this column responsive. I chose to add some padding around the embed because I thought it looked better and created more space.-->
@@ -103,7 +108,7 @@
 			<div class="row">
 				<div class="col col-12 col-md-6">
 					<!--The title is a larger font size and bolded for emphasis.-->
-					<p class="fs-3 fw-bold">Total Songs Per Year</p>
+					<h4 class="fs-3 fw-bold">Total Songs Per Year</h4>
 					<p class="fs-5">Another statistic provided by Apple Music is the total songs listened to per year. This gives an overview of how widespread my listening was for a certain year. I chose to use a lollipop chart because I think it’s a good variation of the bar chart to show the total songs per year. I also wanted to explore different visualizations for the numerous yearly statistics.</p>
 				</div>
 				<!--This is the embed for the flourish graph for total songs. I once again made this responsive and added padding for more space.-->
@@ -121,7 +126,7 @@
 				<!--The third statistic I looked at was total artists per year. This column is responsive.-->
 				<div class="col col-12 col-md-6">
 					<!--Section title bolded and in a larger font for emphasis.-->
-					<p class="fs-3 fw-bold">Total Artists Per Year</p>
+					<h4 class="fs-3 fw-bold">Total Artists Per Year</h4>
 					<p class="fs-5">Total artists per year also gives an indication to how unique my listening taste was during each year. A lot of artists indicates a variety of music. I chose to use a simple circles chart to show the total artists per year. The size of the circles reflects the number of unique albums.</p>
 				</div>
 				<!--This is the embed for the total artists visualization. I added padding again because I liked the extra space for the graphs.-->
@@ -138,7 +143,7 @@
 			<!--This is the final section and the one I was most interested in looking at. These are non-responsive just because they are already in rows and appearing properly on mobiles.-->
 			<div class="row">
 				<!--Bolded larger title for emphasis on the section.-->
-				<p class="fs-3 fw-bold">Total Minutes Per Month</p>	
+				<h4 class="fs-3 fw-bold">Total Minutes Per Month</h4>	
 			</div>
 
 			<!--This is the row for the flourish embed. I chose to give this graph specifically a row entirely to itself. Part of that is because it is a wider graph, but it is also because I was most interested in this data and wanted it to be more emphasized in the website.-->
@@ -154,7 +159,7 @@
 
 			<div class="row">
 				<!--I chose to include a Final Findings section just to recap and talk a little about how I felt about the visualizations and the findings.-->
-				<p class="fs-3 fw-bold">Final Findings</p>
+				<h4 class="fs-3 fw-bold">Final Findings</h4>
 				<p class="fs-5">I had a really good time exploring this data. I’ve always been interested in how my music listening statistics look since I do spend a lot of time listening to music. It was really interesting to see some how some of the songs and albums statistics differed from the pattern shown in total listening minutes for the years. A large amount of listening minutes does not necessarily indicate a diverse listening library. </p>
 				<p class="fs-5"> I also loved seeing the patterns in my monthly listening. It is super interesting to see how changes in my life affect the way I listen to music. Sadly, Apple Music doesn’t have the statistics for total songs or albums per month, but that would also be really interesting to explore and see if there is a pattern with that data as well. I had a good time exploring different representations of data for the yearly statistics and analyzing all of the visualizations that resulted from this exploration.</p>
 			</div>
